@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Klempnerei Lauckner — Heizung · Sanitär · Klempner in Mittweida</title>
-  <meta name="description" content="Klempnerei Lauckner — Ihr Klempner- und SHK-Meisterbetrieb in Mittweida. Wärmepumpe, Badsanierung, Notdienst. Jetzt anfragen.">
+  <title>[BETRIEBSNAME] — Tischlermeister in [ORT]</title>
+  <meta name="description" content="[BETRIEBSNAME] — Ihr Tischlermeisterbetrieb in [ORT]. Maßmöbel, Einbauschränke, Fenster, Türen, Innenausbau. Handwerk mit Charakter.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
             dark2: '#141417',
             dark3: '#1E1E24',
             light: '#F5F5F7',
-            accent:'#3B8FD4',
+            accent:'#A0724A',
           }
         }
       }
@@ -42,7 +42,7 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0A0A0B; }
     ::-webkit-scrollbar-thumb { background: #2A2A30; border-radius: 2px; }
-    ::selection { background: #3B8FD4; color: #0A0A0B; }
+    ::selection { background: #A0724A; color: #0A0A0B; }
 
     /* ─── Variables ─── */
     :root {
@@ -58,10 +58,10 @@
       --tl:     #1D1D1F;
       --tl60:   rgba(29,29,31,.6);
       --tl20:   rgba(29,29,31,.2);
-      --acc:    #3B8FD4;
-      --acc2:   #2A6FA8;
-      --acc-dim:rgba(59,143,212,.14);
-      --acc-glow:rgba(59,143,212,.3);
+      --acc:    #A0724A;
+      --acc2:   #7A5230;
+      --acc-dim:rgba(160,114,74,.14);
+      --acc-glow:rgba(160,114,74,.3);
       --gw:     rgba(255,255,255,.07);
       --gb:     rgba(255,255,255,.11);
     }
@@ -171,16 +171,16 @@
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 14px 30px; border-radius: 100px;
-      background: rgba(59,143,212,.14);
-      border: 1px solid rgba(59,143,212,.42);
+      background: rgba(160,114,74,.14);
+      border: 1px solid rgba(160,114,74,.42);
       backdrop-filter: blur(16px);
       color: var(--acc); font-size: 14px; font-weight: 600;
       transition: background .25s, border-color .25s, transform .2s;
       cursor: pointer;
     }
     .btn-primary:hover {
-      background: rgba(59,143,212,.24);
-      border-color: rgba(59,143,212,.68);
+      background: rgba(160,114,74,.24);
+      border-color: rgba(160,114,74,.68);
       transform: translateY(-2px);
     }
     .btn-secondary {
@@ -399,7 +399,7 @@
       position: absolute; inset: 0; pointer-events: none;
       background: radial-gradient(
         ellipse 60% 50% at var(--mx, 50%) var(--my, 50%),
-        rgba(59,143,212,.09) 0%, transparent 70%
+        rgba(160,114,74,.09) 0%, transparent 70%
       );
       transition: opacity .3s;
     }
@@ -407,7 +407,7 @@
       display: flex; flex-direction: column; align-items: center;
       gap: 18px; padding: 40px; position: relative; z-index: 1;
     }
-    .tool-svg { width: 150px; height: 150px; filter: drop-shadow(0 8px 28px rgba(59,143,212,.22)); }
+    .tool-svg { width: 150px; height: 150px; filter: drop-shadow(0 8px 28px rgba(160,114,74,.22)); }
     .tool-card-lbl {
       font-size: 11px; font-weight: 600; letter-spacing: .1em;
       text-transform: uppercase; color: var(--td60);
@@ -419,7 +419,7 @@
     .tool-badge {
       display: flex; align-items: center; gap: 7px;
       padding: 6px 14px; border-radius: 100px;
-      background: rgba(59,143,212,.1); border: 1px solid rgba(59,143,212,.22);
+      background: rgba(160,114,74,.1); border: 1px solid rgba(160,114,74,.22);
       font-size: 11px; font-weight: 700; color: var(--acc); letter-spacing: .06em;
     }
     .tool-badge-dot {
@@ -469,7 +469,7 @@
     .prozess-card::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(to right, transparent, rgba(59,143,212,.38), transparent);
+      background: linear-gradient(to right, transparent, rgba(160,114,74,.38), transparent);
     }
     .prozess-tag {
       font-size: 9.5px; font-weight: 700; letter-spacing: .12em;
@@ -605,7 +605,7 @@
     }
     .f-ctrl::placeholder { color: var(--td30); }
     .f-ctrl:focus {
-      border-color: rgba(59,143,212,.48);
+      border-color: rgba(160,114,74,.48);
       background: rgba(255,255,255,.08);
     }
     .f-ctrl option { background: #1E1E24; color: var(--td); }
@@ -673,7 +673,7 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <div class="nav-logo-pip"></div>
-      Klempnerei Lauckner
+      [BETRIEBSNAME]
     </a>
     <ul class="nav-links" role="list">
       <li><a href="#leistungen">Leistungen</a></li>
@@ -699,9 +699,9 @@
   </div>
 
   <div id="heroContent">
-    <div class="hero-eyebrow">SHK-Meisterbetrieb · Mittweida und Umgebung</div>
-    <h1 class="hero-h1">Heizung.<br><em>Sanitär. Perfekt.</em></h1>
-    <p class="hero-sub">Wir planen, installieren und warten Ihre Heizungs- und Sanitäranlagen — von der Wärmepumpe bis zur Badsanierung.</p>
+    <div class="hero-eyebrow">Tischlermeisterbetrieb · Seit [GRÜNDUNGSJAHR] · [ORT]</div>
+    <h1 class="hero-h1">Holz.<br><em>Maßarbeit. Charakter.</em></h1>
+    <p class="hero-sub">Wir fertigen, was es so nicht zu kaufen gibt — individuelle Möbel und Einbauten, die perfekt passen, weil sie für Sie gemacht wurden.</p>
     <div class="hero-ctas">
       <a href="#kontakt" class="btn-primary">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -724,15 +724,15 @@
 <section id="trust" aria-label="Kennzahlen">
   <div class="trust-grid">
     <div class="trust-item">
-      <span class="trust-num" data-count="35">0</span>
+      <span class="trust-num" data-count="28">0</span>
       <span class="trust-lbl">Jahre Erfahrung</span>
     </div>
     <div class="trust-item">
-      <span class="trust-num" data-count="800">0</span>
+      <span class="trust-num" data-count="500">0</span>
       <span class="trust-lbl">Abgeschlossene Projekte</span>
     </div>
     <div class="trust-item">
-      <span class="trust-num">98%</span>
+      <span class="trust-num">97%</span>
       <span class="trust-lbl">Kundenzufriedenheit</span>
     </div>
     <div class="trust-item">
@@ -748,18 +748,18 @@
     <div class="cards-header reveal">
       <p class="sec-label sec-label-l">Was wir bieten</p>
       <h2 class="sec-h2 sec-h2-l">Expertise, die <em>überzeugt</em></h2>
-      <p class="sec-lead sec-lead-l">Jedes Projekt mit höchster Sorgfalt umgesetzt. Qualität ist kein Zufall — sie ist unser Standard seit über 35 Jahren.</p>
+      <p class="sec-lead sec-lead-l">Jedes Projekt mit höchster Sorgfalt umgesetzt. Qualität ist kein Zufall — sie ist unser Standard seit über 28 Jahren.</p>
     </div>
     <div class="cards-grid">
 
       <div class="card-bubble" data-delay="0">
         <div class="card-icon">
-          <!-- Icon: Flame / Heizung -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 6-6 8-6 14a6 6 0 0 0 12 0c0-6-6-8-6-14z"/></svg>
+          <!-- Icon: Layout Grid -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         </div>
-        <div class="card-tag">Heizung</div>
-        <h3 class="card-title">Heizungsmodernisierung</h3>
-        <p class="card-body">Wärmepumpe, Gasheizung, Pellets — wir planen die optimale Heizlösung für Ihr Gebäude und übernehmen die komplette Installation.</p>
+        <div class="card-tag">Maßmöbel</div>
+        <h3 class="card-title">Maßmöbel &amp; Einbauschränke</h3>
+        <p class="card-body">Einbauschränke, Regalsysteme, Küchenaufsätze — millimetergenau geplant und gefertigt, damit jeder Zentimeter genutzt wird.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -768,12 +768,12 @@
 
       <div class="card-bubble" data-delay="110">
         <div class="card-icon">
-          <!-- Icon: Droplets / Sanitär -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+          <!-- Icon: Door -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="18" height="20" rx="1"/><path d="M9 22V2"/><circle cx="6" cy="12" r="1"/></svg>
         </div>
-        <div class="card-tag">Sanitär</div>
-        <h3 class="card-title">Badsanierung &amp; Installation</h3>
-        <p class="card-body">Von der Modernisierung des bestehenden Bades bis zur Neuinstallation — wir setzen Ihre Badezimmerträume handwerksgerecht um.</p>
+        <div class="card-tag">Fenster &amp; Türen</div>
+        <h3 class="card-title">Fenster &amp; Türen</h3>
+        <p class="card-body">Holz- und Holz-Alu-Fenster, Haustüren und Innentüren nach Maß — energieeffizient, einbruchhemmend und zeitlos schön.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -782,12 +782,12 @@
 
       <div class="card-bubble" data-delay="220">
         <div class="card-icon">
-          <!-- Icon: Wrench / Klempner -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <!-- Icon: Stairs -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h4v-4h4v-4h4v-4h4V4"/></svg>
         </div>
-        <div class="card-tag">Klempner</div>
-        <h3 class="card-title">Rohrleitungsbau &amp; Reparatur</h3>
-        <p class="card-body">Druckdichte Installationen, schnelle Leckage-Ortung und fachgerechte Reparatur aller Rohrleitungssysteme — termingerecht und sauber.</p>
+        <div class="card-tag">Innenausbau</div>
+        <h3 class="card-title">Innenausbau &amp; Treppenbau</h3>
+        <p class="card-body">Wandverkleidungen, Sichtbalkendecken, Tresen und individuelle Treppen — handwerkliche Lösungen, die Räume definieren.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -796,12 +796,12 @@
 
       <div class="card-bubble" data-delay="330">
         <div class="card-icon">
-          <!-- Icon: Clock / Service -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <!-- Icon: Rotate CCW -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.1"/></svg>
         </div>
-        <div class="card-tag">Service</div>
-        <h3 class="card-title">Wartung &amp; 24h-Notdienst</h3>
-        <p class="card-body">Regelmäßige Wartungsverträge verlängern die Lebensdauer Ihrer Anlage. Bei Havarie sind wir rund um die Uhr für Sie erreichbar.</p>
+        <div class="card-tag">Restaurierung</div>
+        <h3 class="card-title">Restaurierung &amp; Reparatur</h3>
+        <p class="card-body">Antike Möbel, historische Fenster, wertvolle Türen — wir restaurieren mit Respekt vor dem Original und Liebe zum Detail.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -827,8 +827,8 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <div class="feat-text">
-            <h4>Profi-Equipment, aktueller Jahrgang</h4>
-            <p>Modernste Geräte für millimetergenaue Ergebnisse</p>
+            <h4>CNC-Fertigung &amp; digitale Planung</h4>
+            <p>CAD-Konstruktion und CNC-Bearbeitung für millimetergenaue Ergebnisse</p>
           </div>
         </div>
         <div class="tool3d-feat">
@@ -856,39 +856,35 @@
     <div class="tool3d-scene">
       <div class="tool3d-card" id="toolCard" role="img" aria-label="Interaktive Werkzeug-Illustration">
         <div class="tool3d-card-body">
-          <!-- Premium Wrench SVG -->
+          <!-- Chisel/Plane Tool SVG -->
           <svg class="tool-svg" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
-              <linearGradient id="wg" x1="35" y1="115" x2="125" y2="35" gradientUnits="userSpaceOnUse">
-                <stop offset="0%"   stop-color="#143060"/>
-                <stop offset="38%"  stop-color="#2260A0"/>
-                <stop offset="68%"  stop-color="#3B8FD4"/>
-                <stop offset="100%" stop-color="#6BAEE0"/>
+              <linearGradient id="wg" x1="40" y1="130" x2="120" y2="30" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#4A2810"/>
+                <stop offset="38%" stop-color="#7A5230"/>
+                <stop offset="68%" stop-color="#A0724A"/>
+                <stop offset="100%" stop-color="#C09060"/>
               </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-              </filter>
             </defs>
-            <circle cx="80" cy="80" r="70" fill="rgba(59,143,212,.05)" stroke="rgba(59,143,212,.12)" stroke-width="1"/>
-            <circle cx="80" cy="80" r="50" fill="none" stroke="rgba(59,143,212,.07)" stroke-width="1" stroke-dasharray="3.5 5"/>
-            <!-- Wrench body -->
-            <path d="M96 39 C102 28 118 26 126 35 C134 44 131 60 120 65 L73 112 C68 122 51 124 43 115 C35 107 37 91 48 86 Z"
-                  fill="url(#wg)" stroke="rgba(59,143,212,.35)" stroke-width="1.5"/>
-            <!-- Upper jaw notch -->
-            <path d="M96 39 L105 30 M89 46 L102 34" stroke="rgba(59,143,212,.55)" stroke-width="2" stroke-linecap="round"/>
-            <!-- Lower jaw notch -->
-            <path d="M48 86 L57 77 M41 93 L53 82" stroke="rgba(59,143,212,.55)" stroke-width="2" stroke-linecap="round"/>
-            <!-- Center hole -->
-            <circle cx="84" cy="77" r="5.5" fill="none" stroke="rgba(59,143,212,.45)" stroke-width="1.5"/>
+            <circle cx="80" cy="80" r="70" fill="rgba(160,114,74,.05)" stroke="rgba(160,114,74,.12)" stroke-width="1"/>
+            <circle cx="80" cy="80" r="50" fill="none" stroke="rgba(160,114,74,.07)" stroke-width="1" stroke-dasharray="3.5 5"/>
+            <!-- Chisel body -->
+            <rect x="70" y="28" width="20" height="80" rx="4" fill="url(#wg)" stroke="rgba(160,114,74,.35)" stroke-width="1.5"/>
+            <!-- Chisel tip (blade) -->
+            <path d="M70 108 L80 132 L90 108Z" fill="url(#wg)" stroke="rgba(160,114,74,.4)" stroke-width="1.5" stroke-linejoin="round"/>
+            <!-- Handle band/ferrule -->
+            <rect x="67" y="55" width="26" height="8" rx="2" fill="rgba(160,114,74,.55)" stroke="rgba(160,114,74,.3)" stroke-width="1"/>
+            <rect x="67" y="95" width="26" height="6" rx="2" fill="rgba(160,114,74,.55)" stroke="rgba(160,114,74,.3)" stroke-width="1"/>
             <!-- Shine -->
-            <path d="M99 43 C104 38 111 37 115 41 L102 54 C97 50 95 47 99 43Z" fill="rgba(255,255,255,.11)"/>
+            <path d="M73 30 Q76 29 76 80 Q74 80 74 30Z" fill="rgba(255,255,255,.1)"/>
+            <!-- Blade shine -->
+            <path d="M73 110 L76 125 L76 110Z" fill="rgba(255,255,255,.08)"/>
           </svg>
-          <div class="tool-card-lbl">SHK-Meisterbetrieb</div>
-          <div class="tool-card-name">Klempnerei Lauckner</div>
+          <div class="tool-card-lbl">Tischlermeisterbetrieb</div>
+          <div class="tool-card-name">[BETRIEBSNAME]</div>
           <div class="tool-badge">
             <div class="tool-badge-dot"></div>
-            Aktiv in Mittweida
+            Aktiv in [ORT]
           </div>
         </div>
       </div>
@@ -912,8 +908,8 @@
           <div class="prozess-num">01</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 01</div>
-            <h3 class="prozess-title">Bestandsaufnahme &amp; Beratung</h3>
-            <p class="prozess-body">Wir analysieren Ihre vorhandene Anlage, besprechen Ihre Wünsche und Fördermöglichkeiten (BAFA, KfW) — kostenlos und unverbindlich.</p>
+            <h3 class="prozess-title">Aufmaß &amp; Beratung</h3>
+            <p class="prozess-body">Wir kommen zu Ihnen, nehmen exaktes Aufmaß und beraten Sie zu Materialien, Holzarten und gestalterischen Möglichkeiten — kostenlos und unverbindlich.</p>
           </div>
         </div>
 
@@ -921,8 +917,8 @@
           <div class="prozess-num">02</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 02</div>
-            <h3 class="prozess-title">Planung &amp; Angebot</h3>
-            <p class="prozess-body">Detaillierte Systemplanung inkl. Hydraulikschema, transparente Festpreiskalkulation — ohne versteckte Positionen.</p>
+            <h3 class="prozess-title">Design &amp; 3D-Planung</h3>
+            <p class="prozess-body">Ihre Ideen werden in präzisen CAD-Plänen und auf Wunsch in 3D-Visualisierungen dargestellt — damit Sie wissen, was entsteht, bevor das erste Holz gesägt wird.</p>
           </div>
         </div>
 
@@ -930,8 +926,8 @@
           <div class="prozess-num">03</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 03</div>
-            <h3 class="prozess-title">Materiallogistik</h3>
-            <p class="prozess-body">Wir beschaffen alle Komponenten — von Markenherstellern, termingerecht zur Baustelle geliefert.</p>
+            <h3 class="prozess-title">Materialauswahl &amp; Beschaffung</h3>
+            <p class="prozess-body">Massivholz, Furniere, Beschläge — wir beziehen nur geprüfte Qualitätsmaterialien von regionalen Lieferanten.</p>
           </div>
         </div>
 
@@ -939,8 +935,8 @@
           <div class="prozess-num">04</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 04</div>
-            <h3 class="prozess-title">Fachgerechte Montage</h3>
-            <p class="prozess-body">Unser eingespieltes Team installiert präzise, hält alle Normen ein und hält Sie täglich auf dem Laufenden.</p>
+            <h3 class="prozess-title">Werkstattfertigung</h3>
+            <p class="prozess-body">Millimetergenaue Fertigung in unserer Tischlerwerkstatt. Jedes Teil wird kontrolliert, vor Ort vorprobemontiert und sorgfältig transportiert.</p>
           </div>
         </div>
 
@@ -948,8 +944,8 @@
           <div class="prozess-num">05</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 05</div>
-            <h3 class="prozess-title">Inbetriebnahme &amp; Einweisung</h3>
-            <p class="prozess-body">Hydraulischer Abgleich, Abnahmeprotokoll, BAFA-Antrag und ausführliche Einweisung in Ihre neue Anlage.</p>
+            <h3 class="prozess-title">Montage &amp; Übergabe</h3>
+            <p class="prozess-body">Fachgerechte Montage, Endkontrolle und Einweisung. Erst wenn alles stimmt und Sie zufrieden sind, ist das Projekt abgeschlossen.</p>
           </div>
         </div>
 
@@ -976,7 +972,7 @@
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
             <div class="ref-info-title">[Hauptprojekt-Titel]</div>
-            <div class="ref-info-sub">Mittweida · [Jahr]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -987,7 +983,7 @@
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
             <div class="ref-info-title">[Projektname]</div>
-            <div class="ref-info-sub">Mittweida · [Jahr]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -998,7 +994,7 @@
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
             <div class="ref-info-title">[Projektname]</div>
-            <div class="ref-info-sub">Mittweida · [Jahr]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -1009,7 +1005,7 @@
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
             <div class="ref-info-title">[Projektname]</div>
-            <div class="ref-info-sub">Mittweida · [Jahr]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -1020,7 +1016,7 @@
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
             <div class="ref-info-title">[Projektname]</div>
-            <div class="ref-info-sub">Mittweida · [Jahr]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -1043,18 +1039,18 @@
           <div class="author-avi" aria-hidden="true">MK</div>
           <div>
             <div class="author-name">Michael K.</div>
-            <div class="author-loc">Mittweida</div>
+            <div class="author-loc">[ORT]</div>
           </div>
         </div>
       </div>
       <div class="stimme-card">
         <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-        <p class="stimme-quote">„Wir haben Klempnerei Lauckner für eine komplexe Badsanierung beauftragt. Das Ergebnis hat unsere Erwartungen deutlich übertroffen."</p>
+        <p class="stimme-quote">„Wir haben [BETRIEBSNAME] für einen Einbauschrank im Schlafzimmer beauftragt. Das Ergebnis hat unsere Erwartungen deutlich übertroffen."</p>
         <div class="stimme-author">
           <div class="author-avi" aria-hidden="true">SB</div>
           <div>
             <div class="author-name">Sandra B.</div>
-            <div class="author-loc">Mittweida</div>
+            <div class="author-loc">[ORT]</div>
           </div>
         </div>
       </div>
@@ -1065,7 +1061,7 @@
           <div class="author-avi" aria-hidden="true">TL</div>
           <div>
             <div class="author-name">Thomas L.</div>
-            <div class="author-loc">Mittweida</div>
+            <div class="author-loc">[ORT]</div>
           </div>
         </div>
       </div>
@@ -1107,11 +1103,10 @@
           <label class="f-lbl" for="leistung">Gewünschte Leistung</label>
           <select class="f-ctrl" id="leistung" name="leistung" style="cursor:pointer;appearance:none;">
             <option value="">Bitte auswählen …</option>
-            <option>Heizungsmodernisierung</option>
-            <option>Badsanierung</option>
-            <option>Rohrleitungsarbeiten</option>
-            <option>Wartungsvertrag</option>
-            <option>Notdienst</option>
+            <option>Maßmöbel &amp; Einbauschränke</option>
+            <option>Fenster &amp; Türen</option>
+            <option>Innenausbau &amp; Treppen</option>
+            <option>Restaurierung &amp; Reparatur</option>
             <option>Sonstiges</option>
           </select>
         </div>
@@ -1133,16 +1128,16 @@
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-name">Klempnerei Lauckner</div>
-      <p class="footer-desc">Ihr Klempner- und SHK-Meisterbetrieb in Mittweida.</p>
+      <div class="footer-name">[BETRIEBSNAME]</div>
+      <p class="footer-desc">Ihr Tischlermeisterbetrieb in [ORT] — Maßarbeit mit Charakter seit [GRÜNDUNGSJAHR].</p>
     </div>
     <div>
       <div class="footer-col-title">Leistungen</div>
       <ul class="footer-links" role="list">
-        <li><a href="#">Heizungsinstallation</a></li>
-        <li><a href="#">Badsanierung</a></li>
-        <li><a href="#">Klempnerarbeiten</a></li>
-        <li><a href="#">Wartung &amp; Service</a></li>
+        <li><a href="#">Maßmöbel</a></li>
+        <li><a href="#">Fenster &amp; Türen</a></li>
+        <li><a href="#">Innenausbau</a></li>
+        <li><a href="#">Restaurierung</a></li>
       </ul>
     </div>
     <div>
@@ -1157,14 +1152,14 @@
     <div>
       <div class="footer-col-title">Kontakt</div>
       <ul class="footer-links" role="list">
-        <li><a href="tel:03727 3068">03727 3068</a></li>
-        <li><a href="mailto:klempnerlauckner@gmx.de">klempnerlauckner@gmx.de</a></li>
-        <li><a href="#">Gabelsberger Str. 2, 09648 Mittweida</a></li>
+        <li><a href="tel:[TELEFON]">[TELEFON]</a></li>
+        <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
+        <li><a href="#">[STRASSE], [PLZ] [ORT]</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-btm">
-    <p>© 2025 Klempnerei Lauckner. Alle Rechte vorbehalten.</p>
+    <p>© 2025 [BETRIEBSNAME]. Alle Rechte vorbehalten.</p>
     <div class="footer-btm-links">
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
@@ -1329,4 +1324,3 @@
 
 </body>
 </html>
-
