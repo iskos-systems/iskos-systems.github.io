@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elektro Mustermann — Elektriker in Ihrer Region</title>
+  <meta name="description" content="Ihr Elektromeisterbetrieb für Elektroinstallation, Smart Home, Wallbox und PV-Anlagen. Meisterqualität. Faire Preise. Notdienst 24/7.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0a1628;
+      --navy-mid:    #0f2044;
+      --navy-light:  #1e3a6e;
+      --yellow:      #facc15;
+      --yellow-h:    #eab308;
+      --yellow-soft: #fef08a;
+      --slate:       #334155;
+      --body-txt:    #475569;
+      --muted:       #94a3b8;
+      --border:      #e2e8f0;
+      --surface:     #f8fafc;
+      --white:       #ffffff;
+      --radius-sm:   8px;
+      --radius-md:   14px;
+      --radius-lg:   20px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--slate);
+      background: var(--white);
+    }
+
+    h1, h2, h3, h4, .nav-logo {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+    }
+
+    /* ── Nav ──────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .nav.scrolled {
+      background: rgba(10, 22, 40, 0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-logo-dot {
+      width: 8px; height: 8px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--yellow); }
+    .nav-cta {
+      background: var(--yellow);
+      color: var(--navy) !important;
+      padding: 0.55rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600 !important;
+      font-size: 0.9rem !important;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+    .nav-cta:hover {
+      background: var(--yellow-h) !important;
+      transform: translateY(-1px);
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ── Hero ────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(250,204,21,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 80% at 10% 80%, rgba(30,58,110,0.6) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(250,204,21,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(250,204,21,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    /* Animated lightning bolt */
+    .hero-bolt {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.07;
+      animation: bolt-pulse 4s ease-in-out infinite;
+    }
+    .hero-bolt svg { width: 420px; height: 560px; }
+    @keyframes bolt-pulse {
+      0%, 100% { opacity: 0.07; transform: translateY(-50%) scale(1); }
+      50% { opacity: 0.13; transform: translateY(-50%) scale(1.03); }
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(250,204,21,0.12);
+      border: 1px solid rgba(250,204,21,0.25);
+      color: var(--yellow);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.8rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--yellow);
+      border-radius: 50%;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 .accent {
+      color: var(--yellow);
+      position: relative;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 480px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--yellow);
+      color: var(--navy);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      min-height: 48px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(250,204,21,0.3);
+    }
+    .btn-primary:hover {
+      background: var(--yellow-h);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(250,204,21,0.4);
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      min-height: 48px;
+      padding: 0.5rem 0.25rem;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--yellow); }
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+    }
+    .hero-trust-item svg { flex-shrink: 0; }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .hero-stat-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .hero-stat-card:hover {
+      border-color: rgba(250,204,21,0.3);
+      background: rgba(250,204,21,0.05);
+    }
+    .hero-stat-card:first-child {
+      grid-column: span 2;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .stat-icon {
+      width: 48px; height: 48px;
+      background: rgba(250,204,21,0.12);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--yellow);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 0.2rem;
+    }
+    .stat-num-sm {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-desc {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.15rem;
+    }
+
+    /* ── Section base ───────────────────────── */
+    section { padding: 6rem 0; }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .section-tag {
+      display: inline-block;
+      background: rgba(15,32,68,0.08);
+      color: var(--navy-light);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      border: 1px solid rgba(15,32,68,0.12);
+      margin-bottom: 1rem;
+    }
+    .section-tag.light {
+      background: rgba(250,204,21,0.12);
+      color: var(--yellow);
+      border-color: rgba(250,204,21,0.2);
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .section-title.light { color: var(--white); }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--body-txt);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .section-sub.light { color: rgba(255,255,255,0.6); }
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── Services ────────────────────────────── */
+    .services { background: var(--surface); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--yellow);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      border-color: rgba(250,204,21,0.4);
+      box-shadow: 0 8px 32px rgba(10,22,40,0.1);
+      transform: translateY(-4px);
+    }
+    .service-card:hover::after {
+      transform: scaleX(1);
+    }
+    .service-card.featured {
+      background: var(--navy);
+      border-color: var(--navy-light);
+      grid-column: span 1;
+    }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: rgba(250,204,21,0.1);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .service-card.featured .service-icon {
+      background: rgba(250,204,21,0.15);
+    }
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .service-card.featured h3 { color: var(--white); }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--body-txt);
+      line-height: 1.6;
+    }
+    .service-card.featured p { color: rgba(255,255,255,0.6); }
+    .service-list {
+      list-style: none;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .service-list li {
+      font-size: 0.85rem;
+      color: var(--body-txt);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+    .service-card.featured .service-list li {
+      color: rgba(255,255,255,0.55);
+    }
+    .service-list li::before {
+      content: '—';
+      color: var(--yellow);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    /* ── About / USPs ─────────────────────────── */
+    .about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-card-main {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      color: var(--white);
+    }
+    .about-card-main h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .about-card-main p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+    .about-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .pill {
+      background: rgba(250,204,21,0.12);
+      color: var(--yellow);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      border: 1px solid rgba(250,204,21,0.2);
+    }
+    .about-card-float {
+      position: absolute;
+      right: -1.5rem;
+      bottom: -1.5rem;
+      background: var(--yellow);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 12px 40px rgba(250,204,21,0.35);
+    }
+    .float-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .float-label {
+      font-size: 0.8rem;
+      color: var(--navy-light);
+      font-weight: 500;
+      margin-top: 0.1rem;
+    }
+
+    .usp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+    .usp-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .usp-icon-wrap {
+      width: 48px; height: 48px;
+      background: rgba(10,22,40,0.06);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .usp-item:hover .usp-icon-wrap {
+      background: rgba(250,204,21,0.15);
+    }
+    .usp-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .usp-item p {
+      font-size: 0.9rem;
+      color: var(--body-txt);
+      line-height: 1.6;
+    }
+
+    /* ── Process ─────────────────────────────── */
+    .process { background: var(--navy); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 24px);
+      right: calc(12.5% + 24px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--yellow), rgba(250,204,21,0.2));
+    }
+    .process-step {
+      text-align: center;
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      background: rgba(250,204,21,0.1);
+      border: 1px solid rgba(250,204,21,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--yellow);
+      margin: 0 auto 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+    .process-step h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .process-step p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    /* ── Testimonials ─────────────────────────── */
+    .testimonials { background: var(--surface); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .testi-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: box-shadow 0.25s;
+    }
+    .testi-card:hover {
+      box-shadow: 0 8px 24px rgba(10,22,40,0.08);
+    }
+    .testi-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 1rem;
+    }
+    .star { color: var(--yellow); font-size: 1rem; }
+    .testi-text {
+      font-size: 0.95rem;
+      color: var(--body-txt);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .testi-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--yellow);
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .testi-where {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ── Contact ─────────────────────────────── */
+    .contact { background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-info h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .contact-info p {
+      color: var(--body-txt);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .contact-item-icon {
+      width: 40px; height: 40px;
+      background: rgba(250,204,21,0.1);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-item-text { font-size: 0.9rem; color: var(--body-txt); }
+    .contact-item-text strong { color: var(--navy); display: block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.1rem; }
+
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .form-group.full { margin-bottom: 1rem; }
+    label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--navy);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      min-height: 48px;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--yellow);
+      box-shadow: 0 0 0 3px rgba(250,204,21,0.15);
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .form-submit {
+      margin-top: 1.25rem;
+    }
+    .btn-form {
+      width: 100%;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      min-height: 52px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .btn-form:hover {
+      background: var(--navy-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(10,22,40,0.25);
+    }
+
+    /* ── CTA Banner ──────────────────────────── */
+    .cta-banner {
+      background: var(--yellow);
+      padding: 4rem 0;
+    }
+    .cta-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cta-text h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .cta-text p {
+      color: rgba(10,22,40,0.65);
+      font-size: 1rem;
+      margin-top: 0.25rem;
+    }
+    .btn-cta-dark {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      white-space: nowrap;
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-cta-dark:hover {
+      background: var(--navy-light);
+      transform: translateY(-2px);
+    }
+
+    /* ── Footer ──────────────────────────────── */
+    footer {
+      background: var(--navy);
+      padding: 3rem 0 2rem;
+    }
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand p {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      max-width: 280px;
+      line-height: 1.6;
+    }
+    .footer-links-col h5 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.75rem;
+    }
+    .footer-links-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .footer-links-col ul li a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-links-col ul li a:hover { color: var(--yellow); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 1.5rem;
+    }
+    .footer-bottom p {
+      color: rgba(255,255,255,0.35);
+      font-size: 0.82rem;
+    }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a {
+      color: rgba(255,255,255,0.35);
+      font-size: 0.82rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── Responsive ──────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+      .hero-stats { max-width: 480px; }
+      .hero-bolt { display: none; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-card-float { position: relative; right: 0; bottom: 0; margin-top: 1rem; display: inline-block; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .process-steps::before { display: none; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 620px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; left: 0; right: 0;
+        background: var(--navy);
+        padding: 1.5rem;
+        gap: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      section { padding: 4rem 0; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card.featured { grid-column: span 1; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .cta-inner { flex-direction: column; }
+      .footer-top { flex-direction: column; }
+    }
+
+    /* ── Scroll animation ─────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-dot"></span>
+      Elektro Mustermann
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#ueber-uns">Über uns</a></li>
+      <li><a href="#ablauf">Ablauf</a></li>
+      <li><a href="#kontakt" class="nav-cta">Jetzt anfragen</a></li>
+    </ul>
+    <div class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-bolt" aria-hidden="true">
+    <svg viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="120,0 60,130 110,130 80,300 160,110 105,110" fill="#facc15"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Elektromeisterbetrieb · Seit 2001
+      </div>
+      <h1>
+        Elektroarbeiten,<br>
+        auf die Sie sich<br>
+        <span class="accent">verlassen können.</span>
+      </h1>
+      <p class="hero-sub">
+        Von der einfachen Steckdose bis zur kompletten Smart-Home-Anlage — wir sind Ihr zuverlässiger Partner für alle Elektroarbeiten. Meisterbetrieb. Festpreisgarantie.
+      </p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Kostenlos anfragen
+        </a>
+        <a href="#leistungen" class="btn-ghost">
+          Leistungen ansehen
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Meisterbetrieb
+        </div>
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Notdienst 24/7
+        </div>
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Festpreisgarantie
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div>
+          <div class="stat-num">24h</div>
+          <div class="stat-label">Notdienst — 365 Tage im Jahr</div>
+        </div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num-sm">500+</div>
+        <div class="stat-desc">Zufriedene<br>Kunden</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num-sm">23</div>
+        <div class="stat-desc">Jahre<br>Erfahrung</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num-sm">4,9 ★</div>
+        <div class="stat-desc">Google<br>Bewertung</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="leistungen">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Leistungen</span>
+      <h2 class="section-title">Was wir für Sie tun</h2>
+      <p class="section-sub">Ob Neubau, Renovierung oder Notfall — wir decken das gesamte Spektrum der Elektrotechnik ab.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        </div>
+        <h3>Elektroinstallation</h3>
+        <p>Neuinstallation und Sanierung von Elektroanlagen in Wohn- und Gewerbegebäuden — sauber, schnell und normgerecht.</p>
+        <ul class="service-list">
+          <li>Unterverteilungen & Sicherungskästen</li>
+          <li>Leitungsverlegung & Kabelkanäle</li>
+          <li>Steckdosen & Schalter</li>
+          <li>E-Check & Prüfprotokolle</li>
+        </ul>
+      </div>
+
+      <div class="service-card featured fade-up">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Smart Home</h3>
+        <p>Automatisierung, die wirklich funktioniert. Wir planen und installieren Ihr individuelles Smart-Home-System.</p>
+        <ul class="service-list">
+          <li>KNX / Bus-Systeme</li>
+          <li>Licht- & Rollladensteuerung</li>
+          <li>Heizungsregelung & Klima</li>
+          <li>Sprachsteuerung (Alexa / Google)</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+        </div>
+        <h3>Wallbox & E-Mobilität</h3>
+        <p>Wir installieren Ihre Wallbox fachgerecht — mit Netzanmeldung, Förderantrag und Abnahme aus einer Hand.</p>
+        <ul class="service-list">
+          <li>Alle gängigen Hersteller</li>
+          <li>1- und 3-phasig bis 22 kW</li>
+          <li>Lademanagement & App</li>
+          <li>KfW-Förderung inklusive</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <h3>PV-Anlagen</h3>
+        <p>Vom Dach bis ins Netz — wir übernehmen die komplette Elektroinstallation Ihrer Photovoltaikanlage.</p>
+        <ul class="service-list">
+          <li>Wechselrichter & Speicher</li>
+          <li>Einspeisezähler & Anmeldung</li>
+          <li>Notstromversorgung</li>
+          <li>Wartung & Monitoring</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Sicherheitstechnik</h3>
+        <p>Einbruchschutz, Videoanlagen und Brandmeldung für Ihr Zuhause oder Gewerbe.</p>
+        <ul class="service-list">
+          <li>Alarmanlage & Bewegungsmelder</li>
+          <li>Videokameras & Türsprechanlagen</li>
+          <li>Rauchwarnmelder (VdS)</li>
+          <li>Anbindung ans Smartphone</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Notdienst & Reparatur</h3>
+        <p>Stromausfall? Sicherung raus? Wir sind rund um die Uhr erreichbar und schnell vor Ort.</p>
+        <ul class="service-list">
+          <li>24h-Entstörservice</li>
+          <li>Geräte- und Anlagenreparatur</li>
+          <li>Fehlersuche & Diagnose</li>
+          <li>Garantierte Reaktionszeit 2h</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="ueber-uns">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual fade-up">
+        <div class="about-card-main">
+          <h3>Elektromeister mit Herzblut</h3>
+          <p>
+            Seit über 20 Jahren arbeiten wir für Privatkunden, Vermieter und Gewerbebetriebe in der Region. Unser Team aus ausgebildeten Elektrikern steht für saubere Arbeit, ehrliche Beratung und faire Preise — immer ohne versteckte Kosten.
+          </p>
+          <p style="margin-top:1rem;">
+            Als eingetragener Meisterbetrieb sind wir für alle Arbeiten an Niederspannungsanlagen zugelassen und zertifiziert nach DIN VDE 0100.
+          </p>
+          <div class="about-pills">
+            <span class="pill">DIN VDE 0100</span>
+            <span class="pill">Meisterbetrieb</span>
+            <span class="pill">KNX Partner</span>
+            <span class="pill">ZVEH Mitglied</span>
+            <span class="pill">Klimaneutral</span>
+          </div>
+        </div>
+        <div class="about-card-float">
+          <div class="float-num">4,9 ★</div>
+          <div class="float-label">Ø Google-Bewertung</div>
+        </div>
+      </div>
+
+      <div class="fade-up">
+        <span class="section-tag">Warum Mustermann</span>
+        <h2 class="section-title" style="margin-bottom:2rem;">Ihr Vorteil bei uns</h2>
+        <div class="usp-list">
+          <div class="usp-item">
+            <div class="usp-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>Termin in 48 Stunden</h4>
+              <p>Kein wochenlanger Wartelisten. Wir kommen schnell — und zuverlässig zum vereinbarten Termin.</p>
+            </div>
+          </div>
+          <div class="usp-item">
+            <div class="usp-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <h4>Kostenvoranschlag vorab</h4>
+              <p>Sie wissen vor Beginn der Arbeit, was es kostet. Keine Überraschungen auf der Rechnung — garantiert.</p>
+            </div>
+          </div>
+          <div class="usp-item">
+            <div class="usp-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4>5 Jahre Garantie auf Arbeit</h4>
+              <p>Auf alle unsere Installationsarbeiten geben wir 5 Jahre Garantie — deutlich mehr als gesetzlich vorgeschrieben.</p>
+            </div>
+          </div>
+          <div class="usp-item">
+            <div class="usp-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <h4>Klare Kommunikation</h4>
+              <p>Sie sind immer informiert: Wir erklären, was wir tun — ohne Fachchinesisch. Und antworten auf Nachrichten innerhalb eines Tages.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="ablauf">
+  <div class="container">
+    <div class="section-header fade-up" style="text-align:center;">
+      <span class="section-tag light">So läuft es ab</span>
+      <h2 class="section-title light" style="margin:0 auto 0.75rem;">Von der Anfrage zur Fertigstellung</h2>
+      <p class="section-sub light" style="margin:0 auto;">Einfach, transparent und ohne Stress.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="step-num">01</div>
+        <h4>Anfrage stellen</h4>
+        <p>Kurz beschreiben, was Sie brauchen — per Formular, Telefon oder WhatsApp.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">02</div>
+        <h4>Angebot erhalten</h4>
+        <p>Wir melden uns innerhalb von 24h mit einem konkreten, kostenlosen Festpreisangebot.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">03</div>
+        <h4>Termin vereinbaren</h4>
+        <p>Wunschtermin auswählen — wir kommen zum vereinbarten Zeitpunkt, pünktlich.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">04</div>
+        <h4>Fertig &amp; geprüft</h4>
+        <p>Nach der Arbeit erhalten Sie das Prüfprotokoll und die Rechnung — alles sauber dokumentiert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Kundenstimmen</span>
+      <h2 class="section-title">Das sagen unsere Kunden</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card fade-up">
+        <div class="testi-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testi-text">„Wallbox wurde in 3 Stunden installiert, alles erklärt, Preis exakt wie angekündigt. Endlich mal ein Handwerker, der zuverlässig ist."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <div class="testi-name">Michael K.</div>
+            <div class="testi-where">Privatkunde, Pirna</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="testi-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testi-text">„Komplette Elektroanlage für unsere neue Praxis — pünktlich, sauber, ohne einen Nachtragsauftrag. Klare Empfehlung für Gewerbe."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SR</div>
+          <div>
+            <div class="testi-name">Dr. Sandra R.</div>
+            <div class="testi-where">Zahnarztpraxis, Dresden</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="testi-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testi-text">„Notdienst um 21 Uhr — innerhalb von 90 Minuten vor Ort, Problem gelöst. Sowas gibt es heutzutage kaum noch. Danke!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">TW</div>
+          <div>
+            <div class="testi-name">Thomas W.</div>
+            <div class="testi-where">Hauseigentümer, Heidenau</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Jetzt anfragen — kostenlos und unverbindlich</h2>
+      <p>Angebot erhalten Sie innerhalb von 24 Stunden. Notdienst: sofort.</p>
+    </div>
+    <a href="tel:+49351123456" class="btn-cta-dark">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      0351 / 123 456
+    </a>
+  </div>
+</div>
+
+<!-- Contact -->
+<section class="contact" id="kontakt">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <span class="section-tag">Kontakt</span>
+        <div class="contact-info">
+          <h3>Schreiben Sie uns</h3>
+          <p>Haben Sie Fragen oder möchten ein Angebot? Füllen Sie das Formular aus — wir melden uns innerhalb von 24 Stunden.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <strong>Telefon / Notdienst</strong>
+                0351 / 123 456 (24h)
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <strong>E-Mail</strong>
+                info@elektro-mustermann.de
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <strong>Adresse</strong>
+                Musterstraße 12, 01796 Pirna
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <strong>Öffnungszeiten</strong>
+                Mo–Fr 7–18 Uhr · Sa 8–13 Uhr
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form fade-up">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Ihr Name</label>
+            <input type="text" id="name" name="name" placeholder="Max Mustermann" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" placeholder="0351 / ..." autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="name@beispiel.de" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="service">Leistung</label>
+            <select id="service" name="service">
+              <option value="">Bitte wählen…</option>
+              <option>Elektroinstallation</option>
+              <option>Smart Home</option>
+              <option>Wallbox / E-Mobilität</option>
+              <option>PV-Anlage</option>
+              <option>Sicherheitstechnik</option>
+              <option>Notdienst</option>
+              <option>Sonstiges</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="message">Ihre Nachricht</label>
+          <textarea id="message" name="message" placeholder="Beschreiben Sie kurz Ihr Anliegen…"></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-form">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Anfrage absenden
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <span class="nav-logo-dot"></span>
+          Elektro Mustermann
+        </a>
+        <p>Ihr Elektromeisterbetrieb in Pirna und Umgebung. Zuverlässig, fair und immer erreichbar.</p>
+      </div>
+      <div class="footer-links-col">
+        <h5>Leistungen</h5>
+        <ul>
+          <li><a href="#leistungen">Elektroinstallation</a></li>
+          <li><a href="#leistungen">Smart Home</a></li>
+          <li><a href="#leistungen">Wallbox</a></li>
+          <li><a href="#leistungen">PV-Anlagen</a></li>
+          <li><a href="#leistungen">Notdienst</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="tel:+49351123456">0351 / 123 456</a></li>
+          <li><a href="mailto:info@elektro-mustermann.de">info@elektro-mustermann.de</a></li>
+          <li><a href="#kontakt">Anfrage stellen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Elektro Mustermann GmbH · Musterstraße 12 · 01796 Pirna</p>
+      <div class="footer-legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu
+  const toggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  toggle.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      navLinks.classList.toggle('open');
+    }
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.closest('.services-grid, .process-steps, .testimonials-grid, .usp-list')
+          ? Array.from(entry.target.parentElement.children).indexOf(entry.target) * 80
+          : 0;
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

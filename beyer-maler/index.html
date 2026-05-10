@@ -1,0 +1,162 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Malermeister Beyer — Malermeister in Freiberg</title>
+  <meta name="description" content="Malermeister Beyer — Ihr Malermeisterbetrieb in Freiberg. Innen, Fassade, Boden. Sauber, pünktlich, fair.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#FAF7F2;--surface:#FFFFFF;--fg:#1C1A17;--muted:#8A817A;--border:#E8E2D9;--accent:#C0512F;--accent-dark:#9D3E22;--accent-soft:#F5E8E3;--font-display:'Playfair Display',Georgia,'Times New Roman',serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;--fs-h1:clamp(36px,5vw,60px);--fs-h2:clamp(26px,3.2vw,40px);--radius:10px;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}img,svg{display:block;max-width:100%;}a{color:inherit;text-decoration:none;}
+    .container{max-width:1120px;margin-inline:auto;padding-inline:32px;}@media(max-width:640px){.container{padding-inline:20px;}}
+    .fade{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}.fade.on{opacity:1;transform:none;}
+    .topnav{position:fixed;inset:0 0 auto;z-index:100;background:rgba(250,247,242,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;}.logo{display:flex;align-items:center;gap:12px;}.logo-icon{width:38px;height:38px;background:var(--accent);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}.logo-icon svg{color:#fff;}.logo-name{font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--fg);line-height:1.2;}.logo-sub{font-size:11px;color:var(--muted);}.nav-links{display:flex;gap:28px;list-style:none;}.nav-links a{font-size:14px;color:var(--muted);transition:color .15s;}.nav-links a:hover{color:var(--fg);}.nav-right{display:flex;align-items:center;gap:16px;}.nav-phone{font-size:14px;font-weight:600;color:var(--fg);transition:color .15s;}.nav-phone:hover{color:var(--accent);}.btn-nav{background:var(--accent);color:#fff;padding:9px 18px;border-radius:var(--radius);font-size:14px;font-weight:500;transition:background .15s;}.btn-nav:hover{background:var(--accent-dark);}@media(max-width:768px){.nav-links{display:none;}}
+    .hero-wrap{padding-top:68px;}.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding-block:clamp(56px,9vw,96px);}@media(max-width:860px){.hero-inner{grid-template-columns:1fr;}.hero-visual{display:none;}}
+    .eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:16px;}.eyebrow::before{content:'';display:inline-block;width:24px;height:1.5px;background:currentColor;}
+    h1{font-family:var(--font-display);font-size:var(--fs-h1);font-weight:500;line-height:1.1;letter-spacing:-.01em;margin-bottom:20px;}h1 .accent{color:var(--accent);}
+    .lead{font-size:18px;line-height:1.7;color:var(--muted);margin-bottom:32px;max-width:48ch;}.cta-group{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:14px 24px;border-radius:var(--radius);font-size:15px;font-weight:500;transition:background .15s,transform .15s;box-shadow:0 2px 16px rgba(192,81,47,.28);}.btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--fg);padding:14px 24px;border-radius:var(--radius);font-size:15px;font-weight:500;border:1px solid var(--border);transition:border-color .15s;}.btn-outline:hover{border-color:var(--fg);}
+    .ph-img{background:var(--surface);border:1px solid var(--border);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--muted);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;}.ph-img svg{opacity:.25;}.ph-img.portrait{aspect-ratio:3/4;}
+    .trust-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface);}.trust-inner{display:flex;}.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:18px 20px;border-right:1px solid var(--border);font-size:13px;color:var(--muted);}.trust-item:last-child{border-right:none;}.trust-item strong{color:var(--fg);font-weight:600;display:block;}.trust-item svg{color:var(--accent);flex-shrink:0;}@media(max-width:640px){.trust-inner{flex-wrap:wrap;}.trust-item{flex:0 0 50%;border-bottom:1px solid var(--border);}.trust-item:nth-child(odd){border-right:1px solid var(--border);}.trust-item:nth-last-child(-n+2){border-bottom:none;}}
+    .section{padding-block:clamp(56px,8vw,96px);}.section-header{margin-bottom:48px;}.section-header .eyebrow{margin-bottom:12px;}h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:500;line-height:1.2;letter-spacing:-.01em;margin-bottom:16px;}.section-lead{font-size:17px;line-height:1.7;color:var(--muted);max-width:54ch;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}@media(max-width:860px){.grid-3{grid-template-columns:1fr 1fr;}}@media(max-width:540px){.grid-3{grid-template-columns:1fr;}}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .2s,transform .2s;}.card:hover{box-shadow:0 4px 24px rgba(28,26,23,.08);transform:translateY(-2px);}.card-icon{width:44px;height:44px;background:var(--accent-soft);border-radius:10px;display:flex;align-items:center;justify-content:center;}.card-icon svg{color:var(--accent);}.card h3{font-size:17px;font-weight:600;color:var(--fg);}.card p{font-size:14px;line-height:1.65;color:var(--muted);}
+    .prozess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}@media(max-width:860px){.prozess-grid{grid-template-columns:1fr 1fr;}}@media(max-width:480px){.prozess-grid{grid-template-columns:1fr;}}
+    .pstep{padding:32px 28px;border-right:1px solid var(--border);position:relative;display:flex;flex-direction:column;gap:14px;}.pstep:last-child{border-right:none;}@media(max-width:860px){.pstep:nth-child(2){border-right:none;}.pstep:nth-child(1),.pstep:nth-child(2){border-bottom:1px solid var(--border);}}@media(max-width:480px){.pstep{border-right:none;border-bottom:1px solid var(--border);}.pstep:last-child{border-bottom:none;}}
+    .pstep-num{font-family:var(--font-display);font-size:13px;font-weight:500;color:var(--accent);letter-spacing:.05em;}.pstep-ic{width:40px;height:40px;background:var(--accent-soft);border-radius:10px;display:flex;align-items:center;justify-content:center;}.pstep-ic svg{color:var(--accent);}.pstep h3{font-size:16px;font-weight:600;color:var(--fg);}.pstep p{font-size:14px;line-height:1.65;color:var(--muted);}.pstep-arrow{position:absolute;right:-10px;top:36px;width:20px;height:20px;background:var(--surface);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1;}.pstep-arrow svg{color:var(--muted);}.pstep:last-child .pstep-arrow{display:none;}@media(max-width:860px){.pstep-arrow{display:none;}}
+    .grid-split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}@media(max-width:860px){.grid-split{grid-template-columns:1fr;}.ueber-visual{display:none;}}.ueber-text{display:flex;flex-direction:column;gap:20px;}.stat-row{display:flex;gap:36px;padding-top:8px;flex-wrap:wrap;}.stat{display:flex;flex-direction:column;gap:4px;}.stat-num{font-family:var(--font-display);font-size:38px;font-weight:500;color:var(--accent);line-height:1;}.stat-label{font-size:13px;color:var(--muted);}.ueber-body{font-size:16px;line-height:1.75;color:var(--muted);}
+    .kontakt-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start;}@media(max-width:860px){.kontakt-grid{grid-template-columns:1fr;}}.ki{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);}.ki:first-child{border-top:1px solid var(--border);}.ki-ic{width:32px;height:32px;background:var(--accent-soft);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}.ki-ic svg{color:var(--accent);}.ki-lbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}.ki-val{font-size:15px;color:var(--fg);font-weight:500;}.ki-val a{color:var(--accent);transition:color .15s;}.ki-val a:hover{color:var(--accent-dark);}
+    .form-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:36px;}.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}@media(max-width:540px){.f-row{grid-template-columns:1fr;}}.fg{display:flex;flex-direction:column;gap:6px;}.fg label{font-size:13px;font-weight:500;color:var(--fg);}.fg input,.fg select,.fg textarea{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:11px 14px;font-family:var(--font-body);font-size:15px;color:var(--fg);transition:border-color .15s,box-shadow .15s;outline:none;width:100%;}.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}.fg input::placeholder,.fg textarea::placeholder{color:var(--muted);}.fg textarea{resize:vertical;min-height:100px;}.fg select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238A817A' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;}.form-fields{display:flex;flex-direction:column;gap:16px;}.btn-submit{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--accent);color:#fff;padding:14px 24px;border-radius:var(--radius);font-size:15px;font-weight:600;border:none;cursor:pointer;transition:background .15s,transform .15s;box-shadow:0 2px 12px rgba(192,81,47,.25);margin-top:4px;}.btn-submit:hover{background:var(--accent-dark);transform:translateY(-1px);}
+    .pagefoot{background:var(--surface);border-top:1px solid var(--border);padding-block:36px;}.foot-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}.foot-copy{font-size:13px;color:var(--muted);}.foot-links{display:flex;gap:20px;}.foot-links a{font-size:13px;color:var(--muted);transition:color .15s;}.foot-links a:hover{color:var(--fg);}
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+      <div><div class="logo-name">Malermeister Beyer</div><div class="logo-sub">Malermeister &middot; Freiberg</div></div>
+    </a>
+    <ul class="nav-links"><li><a href="#leistungen">Leistungen</a></li><li><a href="#ueber">Über uns</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
+    <div class="nav-right">
+      <a href="tel:03731698440" class="nav-phone">03731 698440</a>
+      <a href="#kontakt" class="btn-nav">Anfragen</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-wrap">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">Malermeisterbetrieb &middot; Freiberg und Umgebung</p>
+        <h1>Maler · Lackierer ·<br><span class="accent">sauber &amp; pünktlich<br>aus Freiberg.</span></h1>
+        <p class="lead">Innenausbau, Fassade, Boden — Malermeister Beyer erledigt alle Malerarbeiten handwerklich sauber, pünktlich fertig und zum fairen Festpreis.</p>
+        <div class="cta-group">
+          <a href="tel:03731698440" class="btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.81 19.79 19.79 0 012.12 2.18 2 2 0 014.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>Jetzt anrufen</a>
+          <a href="mailto:maler-beyer@web.de" class="btn-outline">E-Mail schreiben</a>
+        </div>
+      </div>
+      <div class="hero-visual"><div class="ph-img portrait"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 21v-1a5 5 0 0110 0v1"/></svg>Foto einfügen</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="container"><div class="trust-inner">
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div><strong>Malermeister</strong>Innungsbetrieb</div></div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><div><strong>Pünktlich fertig</strong>Termingarantie</div></div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><div><strong>Saubere Arbeit</strong>Einrichtung geschützt</div></div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><div><strong>Aus der Region</strong>Freiberg und Umgebung</div></div>
+  </div></div>
+</div>
+
+<section class="section" id="leistungen" style="background:var(--surface)">
+  <div class="container">
+    <div class="section-header fade"><p class="eyebrow">Leistungen</p><h2>Was ich für Sie erledige</h2><p class="section-lead">Ob frische Farbe, neue Tapeten oder komplette Fassadenrenovierung — Qualität, die man sieht und lange hält.</p></div>
+    <div class="grid-3">
+      <div class="card fade"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Innenarbeiten</h3><p>Tapezieren, Streichen, Spachteln — Wohnräume, Flure, Büros. Sauber abgeklebt, Möbel geschützt, aufgeräumt hinterlassen.</p></div>
+      <div class="card fade"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Fassade &amp; Außen</h3><p>Fassadenanstrich, Putzsanierung, WDVS-Dämmung — langlebiger Schutz für Ihr Gebäude, fachgerecht vorbereitet.</p></div>
+      <div class="card fade"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div><h3>Bodenbeläge</h3><p>Laminat, Vinyl, Linoleum und Teppich — Verlegung inkl. Unterbau, Sockelleisten und Übergänge.</p></div>
+      <div class="card fade"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><h3>Dekorarbeiten</h3><p>Kreative Wandgestaltung, Stucco, Spachteltechniken, Lasuren — für Räume, die besonders wirken sollen.</p></div>
+      <div class="card fade"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><h3>Holzschutz &amp; Lackieren</h3><p>Fensterrahmen, Türen, Tore, Möbel — Grundierung, Zwischenanschliff und Decklack für dauerhaften Schutz.</p></div>
+      <div class="card fade"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Renovierung &amp; Sanierung</h3><p>Wohnungsrenovierung beim Auszug, Sanierung nach Wasserschaden, Neugestaltung ganzer Etagen aus einer Hand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="prozess">
+  <div class="container">
+    <div class="section-header fade"><p class="eyebrow">So läuft es ab</p><h2>Vom Anruf bis zur<br>fertigen Arbeit.</h2><p class="section-lead">Kein Papierkram, keine Überraschungen — einfach anrufen und wir kümmern uns um den Rest.</p></div>
+    <div style="border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;" class="fade">
+      <div class="prozess-grid">
+        <div class="pstep"><span class="pstep-num">01</span><div class="pstep-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.81 19.79 19.79 0 012.12 2.18 2 2 0 014.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg></div><h3>Kontakt aufnehmen</h3><p>Anrufen oder kurze Nachricht — wir melden uns am selben Tag zurück.</p><div class="pstep-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+        <div class="pstep"><span class="pstep-num">02</span><div class="pstep-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3>Besichtigung / Aufmaß</h3><p>Wir schauen uns die Räume an, nehmen Maß und besprechen Farben und Materialien.</p><div class="pstep-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+        <div class="pstep"><span class="pstep-num">03</span><div class="pstep-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div><h3>Festpreisangebot</h3><p>Schriftlicher Kostenvoranschlag — transparent, fair, ohne versteckte Posten.</p><div class="pstep-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+        <div class="pstep"><span class="pstep-num">04</span><div class="pstep-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Saubere Ausführung</h3><p>Pünktlich, sauber, aufgeräumt hinterlassen — fertig wenn versprochen.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ueber">
+  <div class="container">
+    <div class="grid-split">
+      <div class="ueber-text fade">
+        <p class="eyebrow">Über den Betrieb</p>
+        <h2>J&uuml;rgen Beyer —<br>Ihr Malermeister</h2>
+        <p class="ueber-body">[BIO: Wann gegründet, Ausbildung, was den Betrieb besonders macht. 2-3 Sätze.]</p>
+        <p class="ueber-body">Ich arbeite sauber, pünktlich und verlasse keine Baustelle, bis mein Kunde zufrieden ist.</p>
+        <div class="stat-row">
+          <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Jahre Erfahrung</span></div>
+          <div class="stat"><span class="stat-num">400+</span><span class="stat-label">Projekte</span></div>
+          <div class="stat"><span class="stat-num">25</span><span class="stat-label">km Einzugsgebiet</span></div>
+        </div>
+        <a href="tel:03731698440" class="btn-primary" style="align-self:flex-start;margin-top:8px;">Jetzt anrufen</a>
+      </div>
+      <div class="ueber-visual"><div class="ph-img portrait"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 21v-1a5 5 0 0110 0v1"/></svg>Foto Inhaber</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="kontakt" style="background:var(--surface)">
+  <div class="container">
+    <div class="section-header fade"><p class="eyebrow">Kontakt</p><h2>Anfrage stellen.</h2><p class="section-lead">Kurze Nachricht reicht — wir melden uns schnell zurück.</p></div>
+    <div class="kontakt-grid fade">
+      <div>
+        <div class="ki"><div class="ki-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.81 19.79 19.79 0 012.12 2.18 2 2 0 014.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg></div><div><div class="ki-lbl">Telefon</div><div class="ki-val"><a href="tel:03731698440">03731 698440</a></div></div></div>
+        <div class="ki"><div class="ki-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ki-lbl">E-Mail</div><div class="ki-val"><a href="mailto:maler-beyer@web.de">maler-beyer@web.de</a></div></div></div>
+        <div class="ki"><div class="ki-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ki-lbl">Adresse</div><div class="ki-val">Zuger Str. 1A, 09599 Freiberg</div></div></div>
+        <div class="ki"><div class="ki-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="ki-lbl">Öffnungszeiten</div><div class="ki-val">Mo–Fr 07:00–17:00 Uhr</div></div></div>
+      </div>
+      <div class="form-card">
+        <form class="form-fields" onsubmit="doSend(event)">
+          <div class="f-row"><div class="fg"><label>Vorname</label><input type="text" placeholder="Max" required></div><div class="fg"><label>Nachname</label><input type="text" placeholder="Mustermann" required></div></div>
+          <div class="f-row"><div class="fg"><label>Telefon</label><input type="tel" placeholder="03528 12345"></div><div class="fg"><label>E-Mail</label><input type="email" placeholder="max@beispiel.de" required></div></div>
+          <div class="fg"><label>Leistung</label><select><option value="">Bitte auswählen …</option><option>Innenarbeiten</option><option>Fassade / Außen</option><option>Bodenbeläge</option><option>Dekorarbeiten</option><option>Holzschutz / Lackieren</option><option>Renovierung / Sanierung</option><option>Sonstiges</option></select></div>
+          <div class="fg"><label>Nachricht</label><textarea placeholder="Kurze Beschreibung Ihres Anliegens …"></textarea></div>
+          <button type="submit" class="btn-submit" id="sbtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Anfrage absenden</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="pagefoot"><div class="container foot-inner"><span class="foot-copy">© 2026 Malermeister Beyer · Freiberg</span><div class="foot-links"><a href="#">Impressum</a><a href="#">Datenschutz</a></div></div></footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { const el = entry.target; setTimeout(() => el.classList.add('on'), el.dataset.delay || 0); observer.unobserve(el); } }); }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+  document.querySelectorAll('.grid-3').forEach(grid => { grid.querySelectorAll('.card.fade').forEach((card, i) => { card.dataset.delay = i * 80; }); });
+  const statObserver = new IntersectionObserver(([e], obs) => { if (!e.isIntersecting) return; obs.disconnect(); document.querySelectorAll('.stat-num').forEach(el => { const match = el.textContent.match(/(\d+)/); if (!match) return; const target = parseInt(match[1]), suffix = el.textContent.replace(match[1], '').trim(); const t0 = performance.now(), dur = 1200; (function tick(now) { const p = Math.min((now-t0)/dur,1), v = Math.floor((1-Math.pow(1-p,3))*target); el.textContent = v+suffix; if(p<1) requestAnimationFrame(tick); })(t0); }); }, { threshold: 0.4 });
+  const statsRow = document.querySelector('.stat-row'); if (statsRow) statObserver.observe(statsRow);
+  function doSend(e) { e.preventDefault(); const btn = document.getElementById('sbtn'); btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Nachricht gesendet'; btn.style.background = '#2F6B4A'; setTimeout(() => { btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Anfrage absenden'; btn.style.background = ''; e.target.reset(); }, 3500); }
+</script>
+</body>
+</html>
+

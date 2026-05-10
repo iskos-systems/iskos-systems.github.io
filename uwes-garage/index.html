@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uwe's Garage — KFZ-Service in Bad Schandau</title>
+  <meta name="description" content="Uwe's Garage, Inh. Herr Uwe — KFZ-Betrieb in Bad Schandau. HU/AU, Inspektion, Bremsen, Reifenservice für alle Fabrikate. Jetzt anfragen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange:   #27272a;
+      --orange-h: #1a1a1c;
+      --ink:      #111827;
+      --body:     #374151;
+      --muted:    #6b7280;
+      --border:   #e5e7eb;
+      --surface:  #f9fafb;
+      --dark:     #0f0f10;
+      --white:    #ffffff;
+      --pad:      6.5rem 0;
+      --glow-sm:  rgba(39,39,42,.20);
+      --glow-lg:  rgba(39,39,42,.42);
+      --glow-xs:  rgba(39,39,42,.08);
+    }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--body); background: var(--white); overflow-x: hidden; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+    nav { position: fixed; inset: 0 0 auto; z-index: 200; background: rgba(255,255,255,.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { display: flex; align-items: center; gap: .5rem; text-decoration: none; }
+    .logo svg { color: var(--orange); flex-shrink: 0; }
+    .logo-text { font-family: 'Outfit', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .875rem; text-decoration: none; transition: color .18s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+    .nav-phone { color: var(--ink); font-size: .875rem; text-decoration: none; font-weight: 600; transition: color .18s; }
+    .nav-phone:hover { color: var(--orange); }
+    .nav-cta { background: var(--orange); color: var(--white); padding: .48rem 1.2rem; border-radius: 5px; font-weight: 600; font-size: .85rem; text-decoration: none; transition: background .18s; }
+    .nav-cta:hover { background: var(--orange-h); }
+    .nav-mob { display: none; color: var(--ink); font-size: .875rem; font-weight: 600; text-decoration: none; }
+    @media (max-width: 740px) { .nav-links, .nav-right { display: none; } .nav-mob { display: block; } }
+    .hero { padding-top: 64px; background: var(--white); overflow: hidden; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; padding: 6rem 0 5rem; }
+    @media (max-width: 860px) { .hero-inner { grid-template-columns: 1fr; padding: 4rem 0 3rem; } .hero-img-wrap { display: none; } }
+    .hero-img-wrap { border-radius: 12px; overflow: hidden; aspect-ratio: 4/5; background: var(--surface); border: 1px solid var(--border); }
+    .img-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem; }
+    .img-placeholder svg { color: #d1d5db; }
+    .img-placeholder span { font-size: .75rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #d1d5db; }
+    .ueber-photo { border-radius: 12px; overflow: hidden; aspect-ratio: 3/4; background: var(--surface); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem; }
+    .ueber-photo svg { color: #d1d5db; }
+    .ueber-photo span { font-size: .75rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #d1d5db; }
+    .hero-tag { display: inline-flex; align-items: center; gap: .45rem; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.5rem; }
+    .hero-tag::before { content: ''; width: 18px; height: 2px; background: currentColor; border-radius: 1px; }
+    .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 800; line-height: 1.15; color: var(--ink); letter-spacing: -.03em; margin-bottom: 1.5rem; }
+    .hero h1 .line2 { color: var(--orange); display: block; }
+    .hero-p { font-size: 1.02rem; font-weight: 300; line-height: 1.8; color: var(--body); max-width: 440px; margin-bottom: 2.25rem; }
+    .hero-btns { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
+    .btn-solid { background: var(--orange); color: var(--white); padding: .78rem 1.65rem; border-radius: 5px; font-weight: 600; font-size: .9rem; text-decoration: none; display: inline-flex; align-items: center; gap: .45rem; transition: background .18s, transform .15s; box-shadow: 0 2px 12px var(--glow-sm); }
+    .btn-solid:hover { background: var(--orange-h); transform: translateY(-1px); }
+    .btn-ghost { color: var(--body); font-size: .9rem; text-decoration: none; font-weight: 400; display: inline-flex; align-items: center; gap: .4rem; transition: color .18s; padding: .78rem .25rem; }
+    .btn-ghost:hover { color: var(--ink); }
+    .btn-ghost svg { transition: transform .2s; }
+    .btn-ghost:hover svg { transform: translateX(3px); }
+    .strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .strip-row { display: flex; }
+    .strip-item { flex: 1; display: flex; align-items: center; justify-content: center; gap: .55rem; padding: 1rem; border-right: 1px solid var(--border); font-size: .82rem; color: var(--muted); white-space: nowrap; }
+    .strip-item:last-child { border-right: none; }
+    .strip-item svg { color: var(--orange); flex-shrink: 0; }
+    .strip-item strong { color: var(--ink); font-weight: 600; }
+    @media (max-width: 640px) { .strip-row { flex-wrap: wrap; } .strip-item { flex: 0 0 50%; border-bottom: 1px solid var(--border); justify-content: flex-start; padding: .85rem 1rem; } .strip-item:nth-child(odd) { border-right: 1px solid var(--border); } .strip-item:nth-last-child(-n+2) { border-bottom: none; } }
+    .leistungen { padding: var(--pad); background: var(--surface); }
+    .sec-intro { margin-bottom: 3rem; }
+    .sec-intro.center { text-align: center; }
+    .sec-intro.center .sec-sub { margin-inline: auto; }
+    .kicker { display: inline-flex; align-items: center; gap: .45rem; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); margin-bottom: .7rem; }
+    .kicker::before { content: ''; width: 16px; height: 2px; background: currentColor; border-radius: 1px; }
+    .sec-h { font-family: 'Outfit', sans-serif; font-size: clamp(1.7rem, 2.8vw, 2.3rem); font-weight: 700; line-height: 1.5; color: var(--ink); letter-spacing: -.025em; overflow: visible; display: block; }
+    .sec-sub { margin-top: .75rem; font-size: .95rem; color: var(--muted); line-height: 1.72; max-width: 460px; font-weight: 300; }
+    .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+    @media (max-width: 820px) { .svc-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 480px) { .svc-grid { grid-template-columns: 1fr; } }
+    .svc-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem 1.5rem; transition: border-color .2s, box-shadow .2s, transform .2s; }
+    .svc-card:hover { border-color: rgba(39,39,42,.35); box-shadow: 0 6px 28px rgba(0,0,0,.07); transform: translateY(-3px); }
+    .svc-n { font-size: .68rem; font-weight: 700; letter-spacing: .12em; color: var(--orange); margin-bottom: 1rem; display: block; }
+    .svc-ic { color: var(--ink); margin-bottom: .75rem; display: block; }
+    .svc-card h3 { font-family: 'Outfit', sans-serif; font-size: .92rem; font-weight: 700; color: var(--ink); margin-bottom: .45rem; }
+    .svc-card p { font-size: .83rem; line-height: 1.7; color: var(--muted); font-weight: 300; }
+    .ueber { padding: var(--pad); background: var(--white); }
+    .ueber-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
+    @media (max-width: 760px) { .ueber-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .ueber-text p { font-size: .95rem; line-height: 1.85; color: var(--body); margin-bottom: .8rem; font-weight: 300; }
+    .ueber-text p strong { color: var(--ink); font-weight: 600; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .stat { background: var(--white); padding: 1.6rem 1.4rem; }
+    .stat-n { font-family: 'Outfit', sans-serif; font-size: 2.3rem; font-weight: 800; color: var(--ink); line-height: 1; letter-spacing: -.03em; }
+    .stat-n sup { font-size: 1rem; color: #facc15; }
+    .stat-l { font-size: .76rem; color: var(--muted); margin-top: .4rem; }
+    .gebiet { padding: var(--pad); background: var(--dark); }
+    .gebiet .kicker { color: #facc15; }
+    .gebiet .sec-h { color: var(--white); }
+    .gebiet .sec-sub { color: rgba(255,255,255,.38); }
+    .g-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.07); border-radius: 8px; overflow: hidden; margin-top: 2.25rem; }
+    @media (max-width: 600px) { .g-grid { grid-template-columns: repeat(2,1fr); } }
+    .g-item { background: rgba(255,255,255,.02); padding: 1.1rem 1.2rem; font-size: .86rem; color: rgba(255,255,255,.45); display: flex; align-items: center; gap: .55rem; transition: background .18s, color .18s; }
+    .g-item:hover { background: rgba(39,39,42,.45); color: rgba(255,255,255,.8); }
+    .g-dot { width: 4px; height: 4px; border-radius: 50%; background: #facc15; flex-shrink: 0; }
+    .g-note { margin-top: 1.1rem; font-size: .8rem; color: rgba(255,255,255,.22); }
+    .kontakt { padding: var(--pad); background: var(--surface); }
+    .kontakt-grid { display: grid; grid-template-columns: 1fr 1.55fr; gap: 5rem; align-items: start; }
+    @media (max-width: 760px) { .kontakt-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .ki { display: flex; gap: .85rem; margin-bottom: 1.4rem; align-items: flex-start; }
+    .ki-ic { width: 36px; height: 36px; flex-shrink: 0; border-radius: 7px; border: 1px solid var(--border); background: var(--white); display: flex; align-items: center; justify-content: center; color: var(--muted); }
+    .ki-b { padding-top: 2px; }
+    .ki-lbl { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .22rem; }
+    .ki-val { font-size: .9rem; color: var(--ink); line-height: 1.55; }
+    .ki-val a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--border); transition: border-color .18s, color .18s; }
+    .ki-val a:hover { border-color: var(--orange); color: var(--orange); }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+    @media (max-width: 460px) { .f-row { grid-template-columns: 1fr; } }
+    .fg { margin-bottom: .8rem; }
+    .fg label { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .35rem; }
+    .fg input, .fg select, .fg textarea { width: 100%; background: var(--white); border: 1.5px solid var(--border); border-radius: 6px; padding: .68rem .9rem; font-family: 'DM Sans', sans-serif; font-size: .9rem; color: var(--ink); outline: none; transition: border-color .18s; -webkit-appearance: none; appearance: none; }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--orange); }
+    .fg input::placeholder, .fg textarea::placeholder { color: var(--muted); opacity: .55; }
+    .fg textarea { resize: vertical; min-height: 106px; }
+    .btn-sub { width: 100%; background: var(--ink); color: var(--white); padding: .8rem; border: none; border-radius: 6px; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .9rem; transition: background .18s, transform .15s; }
+    .btn-sub:hover { background: #1f2937; transform: translateY(-1px); }
+    .partner { padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
+    .partner-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 2.5rem 3.5rem; }
+    .partner-name { font-family: 'DM Sans', sans-serif; font-size: .82rem; font-weight: 600; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; opacity: .45; transition: opacity .2s; user-select: none; }
+    .partner-name:hover { opacity: .75; }
+    .prozess { padding: var(--pad); background: var(--white); }
+    .prozess-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    @media (max-width: 720px) { .prozess-grid { grid-template-columns: repeat(2,1fr); } }
+    .pstep { position: relative; }
+    .pstep-n { font-family: 'Outfit', sans-serif; font-size: 3rem; font-weight: 800; line-height: 1; color: rgba(39,39,42,.1); margin-bottom: .4rem; }
+    .pstep-ic { width: 44px; height: 44px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--orange); margin-bottom: .85rem; }
+    .pstep h3 { font-family: 'Outfit', sans-serif; font-size: .9rem; font-weight: 700; color: var(--ink); margin-bottom: .4rem; }
+    .pstep p { font-size: .82rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+    .pstep-arr { position: absolute; right: -1rem; top: 3.2rem; color: var(--border); }
+    @media (max-width: 720px) { .pstep-arr { display: none; } }
+    .referenzen { padding: var(--pad); background: var(--surface); }
+    .ref-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2.5rem; }
+    @media (max-width: 720px) { .ref-grid { grid-template-columns: 1fr; } }
+    .ref-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: box-shadow .2s, transform .2s; }
+    .ref-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.07); transform: translateY(-2px); }
+    .ref-img { aspect-ratio: 16/9; background: var(--surface); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem; color: #d1d5db; }
+    .ref-img span { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; }
+    .ref-body { padding: 1.1rem 1.25rem 1.25rem; }
+    .ref-tag { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); margin-bottom: .4rem; display: block; }
+    .ref-body h3 { font-family: 'Outfit', sans-serif; font-size: .9rem; font-weight: 700; color: var(--ink); margin-bottom: .3rem; }
+    .ref-body p { font-size: .8rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
+    .faq { padding: var(--pad); background: var(--surface); }
+    .faq-list { margin-top: 2.5rem; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { width: 100%; padding: 1.1rem 1.4rem; display: flex; justify-content: space-between; align-items: center; background: var(--white); border: none; cursor: pointer; text-align: left; font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 600; color: var(--ink); transition: background .18s; gap: 1rem; }
+    .faq-q:hover { background: #fafafa; }
+    .faq-icon { flex-shrink: 0; color: var(--muted); transition: transform .25s, color .2s; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .32s ease; }
+    .faq-a-in { padding: 0 1.4rem 1.1rem; font-size: .87rem; line-height: 1.75; color: var(--body); font-weight: 300; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); color: var(--orange); }
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-item.open .faq-q { color: var(--orange); }
+    footer { background: var(--dark); padding: 1.6rem 0; }
+    .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .foot-logo { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; color: var(--white); }
+    .foot-logo span { color: #facc15; }
+    .foot-links { display: flex; gap: 1.75rem; list-style: none; }
+    .foot-links a { color: rgba(255,255,255,.3); font-size: .78rem; text-decoration: none; transition: color .18s; }
+    .foot-links a:hover { color: rgba(255,255,255,.65); }
+    .foot-copy { font-size: .75rem; color: rgba(255,255,255,.2); }
+    .fi { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; overflow: visible; }
+    .fi.on { opacity: 1; transform: none; overflow: visible; }
+    @keyframes ctaPulse { 0%, 100% { box-shadow: 0 2px 12px var(--glow-sm); } 50% { box-shadow: 0 2px 24px var(--glow-lg), 0 0 0 5px var(--glow-xs); } }
+    .btn-solid { animation: ctaPulse 2.8s ease-in-out infinite; }
+    .btn-solid:hover { animation: none; }
+    .svc-grid .svc-card:nth-child(1) { transition-delay: 0ms; } .svc-grid .svc-card:nth-child(2) { transition-delay: 70ms; } .svc-grid .svc-card:nth-child(3) { transition-delay: 140ms; } .svc-grid .svc-card:nth-child(4) { transition-delay: 210ms; } .svc-grid .svc-card:nth-child(5) { transition-delay: 280ms; } .svc-grid .svc-card:nth-child(6) { transition-delay: 350ms; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-wrap">
+    <a href="#" class="logo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+      <span class="logo-text">Uwe's Garage</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#referenzen">Referenzen</a></li>
+      <li><a href="#ueber-uns">Über uns</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+4903502885788" class="nav-phone">035028 85788</a>
+      <a href="#kontakt" class="nav-cta">Termin anfragen</a>
+    </div>
+    <a href="tel:+4903502885788" class="nav-mob">035028 85788</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div style="max-width:560px">
+        <div class="hero-tag">KFZ-Service · Bad Schandau · Alle Fabrikate</div>
+        <h1>KFZ-Service <span class="line2">in Bad Schandau.</span></h1>
+        <p class="hero-p">HU/AU, Inspektion und Reparaturen — Herr Uwe ist Ihr verlässlicher Kfz-Betrieb in Bad Schandau für alle Fabrikate.</p>
+        <div class="hero-btns">
+          <a href="tel:+4903502885788" class="btn-solid">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.9.7 2.81a2 2 0 01-.45 2.11L7.91 13.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Jetzt anrufen
+          </a>
+          <a href="#leistungen" class="btn-ghost">Leistungen ansehen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <div class="img-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Foto Werkstatt</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="container">
+    <div class="strip-row">
+      <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><strong>KFZ</strong>-Service</div>
+      <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg><strong>Alle</strong>&nbsp;Fabrikate</div>
+      <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><strong>HU</strong>/AU</div>
+      <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><strong>Bad Schandau</strong>&nbsp;&amp; Umgebung</div>
+    </div>
+  </div>
+</div>
+
+<div class="partner">
+  <div class="container">
+    <div class="partner-row">
+      <span class="partner-name">Bosch Car Service</span>
+      <span class="partner-name">TÜV</span>
+      <span class="partner-name">Dekra</span>
+      <span class="partner-name">Continental</span>
+      <span class="partner-name">NGK</span>
+      <span class="partner-name">Castrol</span>
+    </div>
+  </div>
+</div>
+
+<section class="leistungen" id="leistungen">
+  <div class="container">
+    <div class="sec-intro center fi">
+      <div class="kicker">Was wir für Sie tun</div>
+      <h2 class="sec-h">Unsere Leistungen</h2>
+      <p class="sec-sub">KFZ-Service für alle Fabrikate in Bad Schandau und der Region Sächsische Schweiz.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fi"><span class="svc-n">01</span><svg class="svc-ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><h3>HU/AU-Vorbereitung</h3><p>Vollständige Fahrzeuguntersuchung und Beseitigung aller Mängel vor dem TÜV-Termin.</p></div>
+      <div class="svc-card fi"><span class="svc-n">02</span><svg class="svc-ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><h3>Inspektion &amp; Ölwechsel</h3><p>Herstellerkonforme Inspektion und Ölwechsel für alle Fabrikate. Werkstattgarantie inklusive.</p></div>
+      <div class="svc-card fi"><span class="svc-n">03</span><svg class="svc-ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg><h3>Bremsen &amp; Fahrwerk</h3><p>Prüfung, Reparatur und Tausch von Bremsen, Stoßdämpfern und Fahrwerkskomponenten.</p></div>
+      <div class="svc-card fi"><span class="svc-n">04</span><svg class="svc-ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="8" rx="4"/></svg><h3>Reifenservice</h3><p>Montage, Auswuchten und Einlagerung. Sommer- und Winterreifen für alle Fahrzeugklassen.</p></div>
+      <div class="svc-card fi"><span class="svc-n">05</span><svg class="svc-ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><h3>Karosserie &amp; Unfall</h3><p>Blecharbeiten, Lackausbesserungen und Unfallschadenreparatur. Schnell und fachgerecht.</p></div>
+      <div class="svc-card fi"><span class="svc-n">06</span><svg class="svc-ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><h3>Klimaanlage &amp; Elektrik</h3><p>Klimaservice, Diagnose und Reparatur der Fahrzeugelektrik. Alle Fabrikate.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prozess" id="prozess">
+  <div class="container">
+    <div class="sec-intro fi"><div class="kicker">So arbeiten wir</div><h2 class="sec-h">Vom Anruf bis zur fertigen Reparatur.</h2><p class="sec-sub">Kein Aufwand für Sie — einfach anrufen, Termin vereinbaren und wir kümmern uns um den Rest.</p></div>
+    <div class="prozess-grid">
+      <div class="pstep fi"><div class="pstep-n">01</div><div class="pstep-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.9.7 2.81a2 2 0 01-.45 2.11L7.91 13.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3>Termin vereinbaren</h3><p>Anrufen — wir vereinbaren schnellstmöglich einen Termin.</p><div class="pstep-arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      <div class="pstep fi"><div class="pstep-n">02</div><div class="pstep-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Fahrzeugcheck</h3><p>Wir prüfen Ihr Fahrzeug gründlich und erklären jeden Befund verständlich.</p><div class="pstep-arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      <div class="pstep fi"><div class="pstep-n">03</div><div class="pstep-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Kostenvoranschlag</h3><p>Transparent und klar — erst nach Ihrer Freigabe beginnen wir die Reparatur.</p><div class="pstep-arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      <div class="pstep fi"><div class="pstep-n">04</div><div class="pstep-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Fertig &amp; abgeholt</h3><p>Pünktlich fertig, sauber übergeben — mit Werkstattgarantie.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="referenzen" id="referenzen">
+  <div class="container">
+    <div class="sec-intro fi"><div class="kicker">Abgeschlossene Arbeiten</div><h2 class="sec-h">Referenzen</h2><p class="sec-sub">Reparaturen und Inspektionen aus der Region Bad Schandau.</p></div>
+    <div class="ref-grid">
+      <div class="ref-card fi"><div class="ref-img"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Werkstattfoto</span></div><div class="ref-body"><span class="ref-tag">HU/AU</span><h3>VW Golf TÜV-Vorbereitung</h3><p>Vollständige Mängelbeseitigung und erfolgreiche HU ohne Nachprüfung.</p></div></div>
+      <div class="ref-card fi"><div class="ref-img"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Werkstattfoto</span></div><div class="ref-body"><span class="ref-tag">Bremsen</span><h3>BMW 3er Bremsanlage</h3><p>Komplette Bremsanlage vorne und hinten — Scheiben und Beläge getauscht.</p></div></div>
+      <div class="ref-card fi"><div class="ref-img"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Werkstattfoto</span></div><div class="ref-body"><span class="ref-tag">Klimaservice</span><h3>Skoda Octavia Klimaanlage</h3><p>Klimaanlage befüllt und auf Dichtigkeit geprüft — läuft wieder einwandfrei.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ueber" id="ueber-uns">
+  <div class="container">
+    <div class="ueber-grid">
+      <div class="ueber-photo fi"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Foto Herr Uwe</span></div>
+      <div>
+        <div class="ueber-text fi">
+          <div class="kicker">Über uns</div>
+          <h2 class="sec-h">Ihr KFZ-Betrieb in Bad Schandau.</h2>
+          <p>Uwe's Garage ist eine <strong>inhabergeführte Kfz-Werkstatt</strong> in Bad Schandau. Herr Uwe führt jeden Auftrag persönlich und steht für bodenständige, ehrliche Handwerksarbeit.</p>
+          <p>Bei uns gibt es <strong>ehrliche Diagnose</strong> und faire Preise — kein Aufbauschen von Reparaturlisten, kein Upselling. Was Ihr Auto braucht, das wird gemacht.</p>
+          <p>Wir nehmen alle Fabrikate. Vom Kleinwagen bis zum Transporter — jedes Fahrzeug wird mit der gleichen Sorgfalt behandelt.</p>
+        </div>
+        <div class="fi" style="margin-top:2rem">
+          <div class="stats">
+            <div class="stat"><div class="stat-n">18<sup>+</sup></div><div class="stat-l">Jahre Erfahrung</div></div>
+            <div class="stat"><div class="stat-n">700<sup>+</sup></div><div class="stat-l">Fahrzeuge betreut</div></div>
+            <div class="stat"><div class="stat-n">100<sup>%</sup></div><div class="stat-l">Alle Fabrikate</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gebiet" id="einsatzgebiet">
+  <div class="container">
+    <div class="sec-intro fi"><div class="kicker">Wo wir tätig sind</div><h2 class="sec-h">Einsatzgebiet</h2><p class="sec-sub">Bad Schandau und die Region Sächsische Schweiz.</p></div>
+    <div class="g-grid fi">
+      <div class="g-item"><span class="g-dot"></span>Bad Schandau</div>
+      <div class="g-item"><span class="g-dot"></span>Sebnitz</div>
+      <div class="g-item"><span class="g-dot"></span>Königstein</div>
+      <div class="g-item"><span class="g-dot"></span>Pirna</div>
+      <div class="g-item"><span class="g-dot"></span>Stolpen</div>
+      <div class="g-item"><span class="g-dot"></span>Neustadt/Sachsen</div>
+      <div class="g-item"><span class="g-dot"></span>Sächsische Schweiz</div>
+      <div class="g-item"><span class="g-dot"></span>Sachsen</div>
+    </div>
+    <p class="g-note fi">Auch außerhalb dieser Orte tätig — einfach anrufen.</p>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="sec-intro fi"><div class="kicker">Häufige Fragen</div><h2 class="sec-h">Das fragen Kunden uns.</h2></div>
+    <div class="faq-list fi">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Brauche ich einen Termin?<svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-in">Für größere Arbeiten (Inspektion, HU/AU, Bremsen) empfehlen wir einen Termin, damit wir ausreichend Zeit einplanen können. Bei kleinen Sachen kommen Sie gerne auch einfach vorbei.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Welche Fabrikate nehmen Sie an?<svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-in">Alle — von VW, BMW, Mercedes und Opel bis hin zu Skoda, Ford und Hyundai. Wir haben die Diagnosetechnik und das Wissen für alle gängigen Fahrzeuge.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Wie schnell vor dem TÜV soll ich kommen?<svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-in">Am besten 2–3 Wochen vorher — dann haben wir Zeit, eventuelle Mängel zu beheben, ohne dass Sie unter Zeitdruck stehen. Kurzfristig geht aber auch.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Haben Sie Ersatzfahrzeuge?<svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-in">Sprechen Sie uns bei der Terminvereinbarung an — bei längeren Reparaturen helfen wir Ihnen, eine Mobilitätslösung zu finden.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="container">
+    <div class="sec-intro fi"><div class="kicker">Kontakt</div><h2 class="sec-h">Termin anfragen.</h2></div>
+    <div class="kontakt-grid">
+      <div class="fi">
+        <div class="ki"><div class="ki-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.9.7 2.81a2 2 0 01-.45 2.11L7.91 13.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div class="ki-b"><div class="ki-lbl">Telefon</div><div class="ki-val"><a href="tel:+4903502885788">035028 85788</a></div></div></div>
+        <div class="ki"><div class="ki-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="ki-b"><div class="ki-lbl">E-Mail</div><div class="ki-val"><a href="mailto:uwesgarage@t-online.de">uwesgarage@t-online.de</a></div></div></div>
+        <div class="ki"><div class="ki-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="ki-b"><div class="ki-lbl">Adresse</div><div class="ki-val">Bad Schandau, Sächsische Schweiz</div></div></div>
+        <div class="ki"><div class="ki-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="ki-b"><div class="ki-lbl">Öffnungszeiten</div><div class="ki-val">Mo–Fr 07:30–17:00 Uhr</div></div></div>
+      </div>
+      <form class="fi" onsubmit="doSend(event)">
+        <div class="f-row">
+          <div class="fg"><label>Vorname</label><input type="text" placeholder="Max" required></div>
+          <div class="fg"><label>Nachname</label><input type="text" placeholder="Mustermann" required></div>
+        </div>
+        <div class="f-row">
+          <div class="fg"><label>Telefon</label><input type="tel" placeholder="0351 123456"></div>
+          <div class="fg"><label>E-Mail</label><input type="email" placeholder="max@beispiel.de" required></div>
+        </div>
+        <div class="fg"><label>Leistung</label><select><option value="">Bitte auswählen …</option><option>HU/AU-Vorbereitung</option><option>Inspektion &amp; Ölwechsel</option><option>Bremsen &amp; Fahrwerk</option><option>Reifenservice</option><option>Karosserie</option><option>Klimaanlage</option><option>Sonstiges</option></select></div>
+        <div class="fg"><label>Nachricht</label><textarea placeholder="Fahrzeug, Kilometerstand, Anliegen …"></textarea></div>
+        <button type="submit" class="btn-sub" id="sbtn">Anfrage absenden →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div class="foot-logo">Uwe's <span>Garage</span></div>
+      <ul class="foot-links"><li><a href="#">Impressum</a></li><li><a href="#">Datenschutz</a></li></ul>
+      <div class="foot-copy">© 2026 Uwe's Garage, Bad Schandau</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(es => { es.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('on'),i*55); io.unobserve(e.target); }}); }, {threshold:.07});
+  document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+  function toggleFaq(btn) { const item = btn.closest('.faq-item'); const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open')); if (!isOpen) item.classList.add('open'); }
+  document.querySelectorAll('.stat-n').forEach(el => { const num = parseFloat(el.textContent); if (isNaN(num)) return; const sup = el.querySelector('sup'); const suffix = sup ? sup.textContent : ''; el.dataset.count = num; el.dataset.csuffix = suffix; el.innerHTML = '0' + (suffix ? `<sup>${suffix}</sup>` : ''); });
+  const statsEl = document.querySelector('.stats');
+  if (statsEl) new IntersectionObserver(([e], obs) => { if (!e.isIntersecting) return; obs.disconnect(); document.querySelectorAll('.stat-n[data-count]').forEach(el => { const target = +el.dataset.count, suffix = el.dataset.csuffix||'', t0 = performance.now(), dur = 1400; (function tick(now){ const p = Math.min((now-t0)/dur,1), v = Math.floor((1-Math.pow(1-p,3))*target); el.innerHTML = v + (suffix?`<sup>${suffix}</sup>`:''); if(p<1) requestAnimationFrame(tick); })(t0); }); }, {threshold:.35}).observe(statsEl);
+  function doSend(e){ e.preventDefault(); const b=document.getElementById('sbtn'); b.textContent='Nachricht gesendet ✓'; b.style.background='#059669'; setTimeout(()=>{b.textContent='Anfrage absenden →';b.style.background='';},3500); }
+</script>
+</body>
+</html>
