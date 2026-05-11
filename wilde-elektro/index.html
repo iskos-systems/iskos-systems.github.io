@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="de" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Frank Frommhold KFZ-Service — KFZ-Meisterbetrieb in Borna</title>
-  <meta name="description" content="Frank Frommhold KFZ-Service — Ihr KFZ-Meisterbetrieb in Borna. Inspektion, Reparatur, HU/AU-Vorbereitung und Reifenservice. Jetzt Termin vereinbaren.">
+  <title>Klaus Wilde Elektromeister — Elektromeister in Niesky</title>
+  <meta name="description" content="Klaus Wilde Elektromeister — Ihr Elektromeisterbetrieb in Niesky. Elektroinstallation, Smart Home, Photovoltaik, E-Check. Schnell, sicher, zuverlässig.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -19,13 +19,14 @@
             dark2: '#141417',
             dark3: '#1E1E24',
             light: '#F5F5F7',
-            accent:'#3B8FD4',
+            accent:'#E8B84B',
           }
         }
       }
     }
   </script>
   <style>
+    /* ─── Reset & Base ─── */
     *, *::before, *::after { box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; text-rendering: optimizeLegibility; }
     body {
@@ -41,8 +42,9 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0A0A0B; }
     ::-webkit-scrollbar-thumb { background: #2A2A30; border-radius: 2px; }
-    ::selection { background: #3B8FD4; color: #0A0A0B; }
+    ::selection { background: #E8B84B; color: #0A0A0B; }
 
+    /* ─── Variables ─── */
     :root {
       --dark:   #0A0A0B;
       --dark2:  #141417;
@@ -56,14 +58,15 @@
       --tl:     #1D1D1F;
       --tl60:   rgba(29,29,31,.6);
       --tl20:   rgba(29,29,31,.2);
-      --acc:    #3B8FD4;
-      --acc2:   #2A6FA8;
-      --acc-dim:rgba(59,143,212,.14);
-      --acc-glow:rgba(59,143,212,.3);
+      --acc:    #E8B84B;
+      --acc2:   #C89A2A;
+      --acc-dim:rgba(232,184,75,.14);
+      --acc-glow:rgba(232,184,75,.3);
       --gw:     rgba(255,255,255,.07);
       --gb:     rgba(255,255,255,.11);
     }
 
+    /* ─── NAV ─── */
     #navbar {
       position: fixed; inset: 0 0 auto; z-index: 1000;
       transition: background .35s, backdrop-filter .35s, border-color .35s;
@@ -114,6 +117,7 @@
       transform: translateY(-1px);
     }
 
+    /* ─── HERO ─── */
     #hero {
       position: relative; width: 100%; height: 100vh; min-height: 680px;
       display: flex; align-items: center; justify-content: center;
@@ -123,7 +127,7 @@
     .hero-video-wrap video { width: 100%; height: 100%; object-fit: cover; }
     .hero-fallback {
       width: 100%; height: 100%;
-      background: radial-gradient(ellipse at 30% 60%, #0E1A2A 0%, #0A0A0B 70%);
+      background: radial-gradient(ellipse at 30% 60%, #2A1E0E 0%, #0A0A0B 70%);
     }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -145,6 +149,9 @@
       font-size: 10.5px; font-weight: 700; letter-spacing: .18em;
       text-transform: uppercase; color: var(--acc); margin-bottom: 22px;
     }
+    .hero-eyebrow span::before, .hero-eyebrow span::after {
+      content: none;
+    }
     .hero-eyebrow::before, .hero-eyebrow::after {
       content: ''; display: block; width: 24px; height: 1px;
       background: currentColor; opacity: .55;
@@ -164,16 +171,16 @@
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 14px 30px; border-radius: 100px;
-      background: rgba(59,143,212,.14);
-      border: 1px solid rgba(59,143,212,.42);
+      background: rgba(232,184,75,.14);
+      border: 1px solid rgba(232,184,75,.42);
       backdrop-filter: blur(16px);
       color: var(--acc); font-size: 14px; font-weight: 600;
       transition: background .25s, border-color .25s, transform .2s;
       cursor: pointer;
     }
     .btn-primary:hover {
-      background: rgba(59,143,212,.24);
-      border-color: rgba(59,143,212,.68);
+      background: rgba(232,184,75,.24);
+      border-color: rgba(232,184,75,.68);
       transform: translateY(-2px);
     }
     .btn-secondary {
@@ -208,6 +215,7 @@
       50% { opacity: .9; transform: scaleY(.65) translateY(-3px); }
     }
 
+    /* ─── TRUST BAR ─── */
     #trust {
       background: var(--dark2);
       border-top: 1px solid rgba(255,255,255,.05);
@@ -237,6 +245,7 @@
       color: var(--td60); letter-spacing: .04em;
     }
 
+    /* ─── SECTION SHARED ─── */
     .sec-label {
       font-size: 10.5px; font-weight: 700; letter-spacing: .15em;
       text-transform: uppercase; margin-bottom: 10px;
@@ -259,6 +268,7 @@
     .sec-lead-d { color: var(--td60); }
     .sec-lead-l { color: var(--tl60); }
 
+    /* ─── LEISTUNGEN / CARDS ─── */
     #leistungen {
       background: var(--light);
       padding: clamp(72px,9vw,120px) clamp(20px,4vw,56px);
@@ -271,6 +281,7 @@
       gap: 18px;
     }
 
+    /* Glossy Bubble Card */
     .card-bubble {
       position: relative; padding: 34px 30px 30px; border-radius: 26px;
       background: #FFFFFF;
@@ -297,6 +308,7 @@
         inset 0 1px 0 rgba(255,255,255,.95);
       transform: translateY(-5px) scale(1.01) !important;
     }
+    /* Glass sheen */
     .card-bubble::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0; height: 55%;
@@ -315,7 +327,7 @@
       display: inline-block; margin-bottom: 14px;
       font-size: 10px; font-weight: 700; letter-spacing: .1em;
       text-transform: uppercase; padding: 4px 10px; border-radius: 100px;
-      background: rgba(59,143,212,.1); color: var(--acc2);
+      background: rgba(184,146,42,.1); color: var(--acc2);
     }
     .card-title {
       font-size: 19px; font-weight: 700; color: var(--tl);
@@ -331,6 +343,7 @@
     }
     .card-bubble:hover .card-cta { gap: 9px; }
 
+    /* ─── 3D TOOL ─── */
     #tool3d {
       background: var(--dark);
       padding: clamp(72px,9vw,120px) clamp(20px,4vw,56px);
@@ -360,6 +373,7 @@
     }
     .feat-text p { font-size: 12.5px; color: var(--td60); line-height: 1.5; }
 
+    /* 3D Interactive Card */
     .tool3d-scene {
       perspective: 1200px;
       display: flex; align-items: center; justify-content: center;
@@ -379,12 +393,13 @@
       transition: transform .08s linear;
     }
     @media(max-width:480px){ .tool3d-card { width: 260px; height: 320px; } }
+    /* Mouse-tracking glow */
     .tool3d-card::after {
       content: '';
       position: absolute; inset: 0; pointer-events: none;
       background: radial-gradient(
         ellipse 60% 50% at var(--mx, 50%) var(--my, 50%),
-        rgba(59,143,212,.09) 0%, transparent 70%
+        rgba(232,184,75,.09) 0%, transparent 70%
       );
       transition: opacity .3s;
     }
@@ -392,7 +407,7 @@
       display: flex; flex-direction: column; align-items: center;
       gap: 18px; padding: 40px; position: relative; z-index: 1;
     }
-    .tool-svg { width: 150px; height: 150px; filter: drop-shadow(0 8px 28px rgba(59,143,212,.22)); }
+    .tool-svg { width: 150px; height: 150px; filter: drop-shadow(0 8px 28px rgba(232,184,75,.22)); }
     .tool-card-lbl {
       font-size: 11px; font-weight: 600; letter-spacing: .1em;
       text-transform: uppercase; color: var(--td60);
@@ -404,7 +419,7 @@
     .tool-badge {
       display: flex; align-items: center; gap: 7px;
       padding: 6px 14px; border-radius: 100px;
-      background: rgba(59,143,212,.1); border: 1px solid rgba(59,143,212,.22);
+      background: rgba(232,184,75,.1); border: 1px solid rgba(232,184,75,.22);
       font-size: 11px; font-weight: 700; color: var(--acc); letter-spacing: .06em;
     }
     .tool-badge-dot {
@@ -413,6 +428,7 @@
     }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
 
+    /* ─── PROZESS (Horizontal Scroll) ─── */
     #prozess {
       height: 220vh;
       background: var(--dark);
@@ -453,7 +469,7 @@
     .prozess-card::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(to right, transparent, rgba(59,143,212,.38), transparent);
+      background: linear-gradient(to right, transparent, rgba(232,184,75,.38), transparent);
     }
     .prozess-tag {
       font-size: 9.5px; font-weight: 700; letter-spacing: .12em;
@@ -464,12 +480,14 @@
       letter-spacing: -.02em; margin-bottom: 8px;
     }
     .prozess-body { font-size: 13px; line-height: 1.7; color: var(--td60); }
+    /* Bottom progress bar */
     #prozessBar {
       position: absolute; bottom: 0; left: 0;
       height: 2px; background: var(--acc); width: 0%;
       transition: width .08s linear;
     }
 
+    /* ─── REFERENZEN ─── */
     #referenzen {
       background: var(--light);
       padding: clamp(72px,9vw,120px) clamp(20px,4vw,56px);
@@ -498,6 +516,11 @@
       transition: transform .6s cubic-bezier(.25,.46,.45,.94);
     }
     .ref-item:hover .ref-placeholder { transform: scale(1.06); }
+    .ref-img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .6s cubic-bezier(.25,.46,.45,.94);
+    }
+    .ref-item:hover .ref-img { transform: scale(1.06); }
     .ref-info {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(0,0,0,.72) 0%, transparent 55%);
@@ -513,6 +536,7 @@
     .ref-info-title { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
     .ref-info-sub { font-size: 12px; opacity: .65; }
 
+    /* ─── TESTIMONIALS ─── */
     #stimmen {
       background: var(--dark);
       padding: clamp(72px,9vw,120px) clamp(20px,4vw,56px);
@@ -547,6 +571,7 @@
     .author-name { font-size: 13.5px; font-weight: 600; color: var(--td); }
     .author-loc  { font-size: 11.5px; color: var(--td30); }
 
+    /* ─── KONTAKT ─── */
     #kontakt {
       background: var(--dark2);
       padding: clamp(72px,9vw,120px) clamp(20px,4vw,56px);
@@ -580,7 +605,7 @@
     }
     .f-ctrl::placeholder { color: var(--td30); }
     .f-ctrl:focus {
-      border-color: rgba(59,143,212,.48);
+      border-color: rgba(232,184,75,.48);
       background: rgba(255,255,255,.08);
     }
     .f-ctrl option { background: #1E1E24; color: var(--td); }
@@ -600,6 +625,7 @@
       margin-top: 14px; font-size: 11.5px; color: var(--td30);
     }
 
+    /* ─── FOOTER ─── */
     footer {
       background: var(--dark);
       border-top: 1px solid rgba(255,255,255,.05);
@@ -629,6 +655,7 @@
     .footer-btm a:hover { color: var(--td60); }
     .footer-btm-links { display: flex; gap: 18px; }
 
+    /* ─── REVEAL UTILITY ─── */
     .reveal {
       opacity: 0; transform: translateY(22px);
       transition: opacity .6s ease, transform .7s cubic-bezier(.22,.68,0,1.2);
@@ -641,11 +668,12 @@
 </head>
 <body>
 
+<!-- ═══ NAV ═══════════════════════════════════════════════════════════ -->
 <nav id="navbar" role="navigation" aria-label="Hauptnavigation">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <div class="nav-logo-pip"></div>
-      Frank Frommhold KFZ-Service
+      Klaus Wilde Elektromeister
     </a>
     <ul class="nav-links" role="list">
       <li><a href="#leistungen">Leistungen</a></li>
@@ -658,26 +686,29 @@
   </div>
 </nav>
 
+<!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
 <section id="hero" aria-label="Hero">
   <div class="hero-video-wrap">
+    <!-- ► Ersetze src mit echtem Video-Link.
+         Empfehlung: 1920×1080, H.264, max 6 MB, loop 10–20s -->
     <video autoplay muted loop playsinline id="heroVideo">
-      <source src="" type="video/mp4">
+      <source src="[VIDEO_URL].mp4" type="video/mp4">
     </video>
     <div class="hero-fallback" id="heroFallback" style="display:none;"></div>
     <div class="hero-overlay"></div>
   </div>
 
   <div id="heroContent">
-    <div class="hero-eyebrow">KFZ-Meisterbetrieb · Borna</div>
-    <h1 class="hero-h1">Ihr Auto.<br><em>In besten Händen.</em></h1>
-    <p class="hero-sub">Wir inspizieren, reparieren und warten Ihr Fahrzeug — von der HU-Vorbereitung bis zum Reifenservice. Schnell, zuverlässig, fair.</p>
+    <div class="hero-eyebrow">Elektromeisterbetrieb · Niesky</div>
+    <h1 class="hero-h1">Elektro.<br><em>Präzise. Sicher.</em></h1>
+    <p class="hero-sub">Wir installieren, prüfen und modernisieren — von der klassischen Elektroinstallation bis zur intelligenten Hausautomation.</p>
     <div class="hero-ctas">
       <a href="#kontakt" class="btn-primary">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Termin vereinbaren
       </a>
-      <a href="#leistungen" class="btn-secondary">
-        Leistungen ansehen
+      <a href="#referenzen" class="btn-secondary">
+        Projekte ansehen
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
       </a>
     </div>
@@ -689,6 +720,7 @@
   </div>
 </section>
 
+<!-- ═══ TRUST BAR ═════════════════════════════════════════════════════ -->
 <section id="trust" aria-label="Kennzahlen">
   <div class="trust-grid">
     <div class="trust-item">
@@ -696,11 +728,11 @@
       <span class="trust-lbl">Jahre Erfahrung</span>
     </div>
     <div class="trust-item">
-      <span class="trust-num" data-count="3500">0</span>
-      <span class="trust-lbl">Fahrzeuge gewartet</span>
+      <span class="trust-num" data-count="600">0</span>
+      <span class="trust-lbl">Abgeschlossene Projekte</span>
     </div>
     <div class="trust-item">
-      <span class="trust-num">98%</span>
+      <span class="trust-num">99%</span>
       <span class="trust-lbl">Kundenzufriedenheit</span>
     </div>
     <div class="trust-item">
@@ -710,22 +742,24 @@
   </div>
 </section>
 
+<!-- ═══ LEISTUNGEN ════════════════════════════════════════════════════ -->
 <section id="leistungen" aria-label="Leistungen">
   <div class="cards-wrap">
     <div class="cards-header reveal">
       <p class="sec-label sec-label-l">Was wir bieten</p>
       <h2 class="sec-h2 sec-h2-l">Expertise, die <em>überzeugt</em></h2>
-      <p class="sec-lead sec-lead-l">Jedes Fahrzeug mit höchster Sorgfalt behandelt. Qualität ist kein Zufall — sie ist unser Standard.</p>
+      <p class="sec-lead sec-lead-l">Jedes Projekt mit höchster Sorgfalt umgesetzt. Qualität ist kein Zufall — sie ist unser Standard seit über 25 Jahren.</p>
     </div>
     <div class="cards-grid">
 
       <div class="card-bubble" data-delay="0">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <!-- Icon: Zap / Elektroinstallation -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
-        <div class="card-tag">Wartung</div>
-        <h3 class="card-title">Inspektion &amp; Wartung</h3>
-        <p class="card-body">Regelmäßige Inspektionen nach Herstellervorgaben, Ölwechsel, Filter- und Flüssigkeitstausch — für maximale Fahrzeugsicherheit und Langlebigkeit.</p>
+        <div class="card-tag">Installation</div>
+        <h3 class="card-title">Elektroinstallation</h3>
+        <p class="card-body">Neuinstallation, Sanierung und Erweiterung elektrischer Anlagen — normgerecht nach DIN VDE, sauber ausgeführt und vollständig dokumentiert.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -734,11 +768,12 @@
 
       <div class="card-bubble" data-delay="110">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <!-- Icon: CPU / Smart Home -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
         </div>
-        <div class="card-tag">Reparatur</div>
-        <h3 class="card-title">Motor &amp; Getriebe</h3>
-        <p class="card-body">Diagnose und Reparatur aller Motor- und Getriebeprobleme. Moderne Diagnosetechnik für schnelle, präzise Fehleranalyse und fachgerechte Instandsetzung.</p>
+        <div class="card-tag">Smart Home</div>
+        <h3 class="card-title">Smart Home &amp; Automation</h3>
+        <p class="card-body">KNX, Loxone oder Shelly — wir planen und installieren Ihr intelligentes Zuhause: Licht, Heizung, Sicherheit, alles vernetzt.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -747,11 +782,12 @@
 
       <div class="card-bubble" data-delay="220">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+          <!-- Icon: Sun / Photovoltaik -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </div>
-        <div class="card-tag">Prüfung</div>
-        <h3 class="card-title">HU/AU-Vorbereitung</h3>
-        <p class="card-body">Wir bereiten Ihr Fahrzeug gezielt auf die Hauptuntersuchung vor — alle relevanten Punkte geprüft, Mängel behoben, sicher durch den TÜV.</p>
+        <div class="card-tag">Photovoltaik</div>
+        <h3 class="card-title">PV &amp; Ladeinfrastruktur</h3>
+        <p class="card-body">Photovoltaikanlage, Batteriespeicher und Wallbox aus einer Hand — wir übernehmen Planung, Anmeldung und Inbetriebnahme komplett.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -760,11 +796,12 @@
 
       <div class="card-bubble" data-delay="330">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+          <!-- Icon: Shield Check / E-Check -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
         </div>
-        <div class="card-tag">Reifen</div>
-        <h3 class="card-title">Reifenservice</h3>
-        <p class="card-body">Reifenmontage, -wuchtung und saisonaler Wechsel. Fachgerechte Einlagerung möglich. Kompetente Beratung zur richtigen Reifenwahl für Ihr Fahrzeug.</p>
+        <div class="card-tag">Prüfung</div>
+        <h3 class="card-title">E-Check &amp; DGUV V3</h3>
+        <p class="card-body">Wiederkehrende Prüfungen ortsveränderlicher und ortsfester Betriebsmittel — mit Prüfprotokoll, rechtsicher und fristgerecht.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -775,12 +812,14 @@
   </div>
 </section>
 
+<!-- ═══ 3D TOOL (Mouse-Parallax) ══════════════════════════════════════ -->
 <section id="tool3d" aria-label="Ausstattung">
   <div class="tool3d-inner">
 
+    <!-- Text Left -->
     <div class="reveal">
       <p class="sec-label sec-label-d">Technologie &amp; Qualität</p>
-      <h2 class="sec-h2 sec-h2-d">Modernste <em>Diagnosetechnik</em></h2>
+      <h2 class="sec-h2 sec-h2-d">Modernste <em>Ausstattung</em></h2>
       <p class="sec-lead sec-lead-d">Präzision entsteht nicht durch Zufall. Wir investieren in die besten Werkzeuge — für Ergebnisse, die überzeugen.</p>
       <div class="tool3d-feats">
         <div class="tool3d-feat">
@@ -788,8 +827,8 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <div class="feat-text">
-            <h4>Profi-Diagnosegeräte, aktueller Stand</h4>
-            <p>Fehlersuche bei allen Fahrzeugmarken, auch Elektro &amp; Hybrid</p>
+            <h4>Profi-Equipment, aktueller Jahrgang</h4>
+            <p>Modernste Messgeräte und Installationstechnik für normgerechte Ergebnisse</p>
           </div>
         </div>
         <div class="tool3d-feat">
@@ -806,45 +845,37 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <div class="feat-text">
-            <h4>2 Jahre Gewährleistung auf Reparaturen</h4>
-            <p>Jede Reparatur mit voller gesetzlicher Absicherung</p>
+            <h4>5 Jahre Handwerkergewährleistung</h4>
+            <p>Jedes Projekt mit voller gesetzlicher Absicherung</p>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Interactive 3D Card Right -->
     <div class="tool3d-scene">
-      <div class="tool3d-card" id="toolCard" role="img" aria-label="Interaktive KFZ-Illustration">
+      <div class="tool3d-card" id="toolCard" role="img" aria-label="Interaktive Blitz-Illustration">
         <div class="tool3d-card-body">
+          <!-- Lightning Bolt SVG -->
           <svg class="tool-svg" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
-              <linearGradient id="wg" x1="35" y1="115" x2="125" y2="35" gradientUnits="userSpaceOnUse">
-                <stop offset="0%"   stop-color="#143060"/>
-                <stop offset="38%"  stop-color="#2260A0"/>
-                <stop offset="68%"  stop-color="#3B8FD4"/>
-                <stop offset="100%" stop-color="#6BAEE0"/>
+              <linearGradient id="wg" x1="40" y1="130" x2="120" y2="30" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#8A6010"/>
+                <stop offset="38%" stop-color="#C89A2A"/>
+                <stop offset="68%" stop-color="#E8B84B"/>
+                <stop offset="100%" stop-color="#F5D070"/>
               </linearGradient>
             </defs>
-            <circle cx="80" cy="80" r="70" fill="rgba(59,143,212,.05)" stroke="rgba(59,143,212,.12)" stroke-width="1"/>
-            <circle cx="80" cy="80" r="50" fill="none" stroke="rgba(59,143,212,.07)" stroke-width="1" stroke-dasharray="3.5 5"/>
-            <!-- Car body -->
-            <rect x="30" y="82" width="100" height="32" rx="6" fill="url(#wg)" stroke="rgba(59,143,212,.35)" stroke-width="1.5"/>
-            <path d="M45 82 L60 58 L100 58 L115 82 Z" fill="url(#wg)" stroke="rgba(59,143,212,.35)" stroke-width="1.5"/>
-            <!-- Windows -->
-            <path d="M62 80 L68 63 L92 63 L98 80 Z" fill="rgba(59,143,212,.2)" stroke="rgba(59,143,212,.5)" stroke-width="1"/>
-            <!-- Wheels -->
-            <circle cx="53" cy="114" r="13" fill="#141417" stroke="rgba(59,143,212,.45)" stroke-width="2"/>
-            <circle cx="53" cy="114" r="5" fill="none" stroke="rgba(59,143,212,.55)" stroke-width="1.5"/>
-            <circle cx="107" cy="114" r="13" fill="#141417" stroke="rgba(59,143,212,.45)" stroke-width="2"/>
-            <circle cx="107" cy="114" r="5" fill="none" stroke="rgba(59,143,212,.55)" stroke-width="1.5"/>
-            <!-- Shine -->
-            <path d="M65 70 Q80 60 95 70" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <circle cx="80" cy="80" r="70" fill="rgba(232,184,75,.05)" stroke="rgba(232,184,75,.12)" stroke-width="1"/>
+            <circle cx="80" cy="80" r="50" fill="none" stroke="rgba(232,184,75,.07)" stroke-width="1" stroke-dasharray="3.5 5"/>
+            <polygon points="90,28 55,88 78,88 70,132 105,72 82,72" fill="url(#wg)" stroke="rgba(232,184,75,.35)" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M86 32 L78 50 L88 50" fill="rgba(255,255,255,.1)" stroke="none"/>
           </svg>
-          <div class="tool-card-lbl">KFZ-Meisterbetrieb</div>
-          <div class="tool-card-name">Frank Frommhold KFZ-Service</div>
+          <div class="tool-card-lbl">Elektromeisterbetrieb</div>
+          <div class="tool-card-name">Klaus Wilde Elektromeister</div>
           <div class="tool-badge">
             <div class="tool-badge-dot"></div>
-            Aktiv in Borna
+            Aktiv in Niesky
           </div>
         </div>
       </div>
@@ -853,11 +884,12 @@
   </div>
 </section>
 
+<!-- ═══ PROZESS (Horizontal Scroll) ══════════════════════════════════ -->
 <section id="prozess" aria-label="Unser Prozess">
   <div class="prozess-sticky">
     <div class="prozess-hd">
       <p class="sec-label sec-label-d reveal">Wie wir arbeiten</p>
-      <h2 class="sec-h2 sec-h2-d reveal d1">Von der Diagnose <em>zur Übergabe</em></h2>
+      <h2 class="sec-h2 sec-h2-d reveal d1">Von der Planung <em>zur Umsetzung</em></h2>
     </div>
     <div class="prozess-track-wrap">
       <div class="prozess-track" id="prozessTrack">
@@ -867,8 +899,8 @@
           <div class="prozess-num">01</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 01</div>
-            <h3 class="prozess-title">Fahrzeugaufnahme &amp; Diagnose</h3>
-            <p class="prozess-body">Wir nehmen Ihr Fahrzeug entgegen, besprechen Ihre Beschwerden und führen eine vollständige elektronische Diagnose durch — transparent und kostenlos.</p>
+            <h3 class="prozess-title">Aufnahme vor Ort</h3>
+            <p class="prozess-body">Wir besichtigen kostenlos, erfassen den Istzustand der Anlage und klären Ihre Anforderungen — von der Einzelsteckdose bis zur Gesamtplanung.</p>
           </div>
         </div>
 
@@ -876,8 +908,8 @@
           <div class="prozess-num">02</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 02</div>
-            <h3 class="prozess-title">Kostenvoranschlag</h3>
-            <p class="prozess-body">Klare Auflistung aller notwendigen Arbeiten und Ersatzteile — keine versteckten Kosten, keine Überraschungen. Erst nach Ihrer Freigabe geht es los.</p>
+            <h3 class="prozess-title">Konzept &amp; Angebot</h3>
+            <p class="prozess-body">Technische Konzeption, Materialliste und transparentes Festpreisangebot — schriftlich, verbindlich, ohne Nachträge.</p>
           </div>
         </div>
 
@@ -885,8 +917,8 @@
           <div class="prozess-num">03</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 03</div>
-            <h3 class="prozess-title">Ersatzteilbeschaffung</h3>
-            <p class="prozess-body">Wir beschaffen alle Teile schnell von zuverlässigen Lieferanten — Originalqualität oder gleichwertige Markenwaren, je nach Ihrem Wunsch.</p>
+            <h3 class="prozess-title">Genehmigungen &amp; Anmeldung</h3>
+            <p class="prozess-body">Wir kümmern uns um alle erforderlichen Anmeldungen beim Netzbetreiber und Behörden — vollständig und fristgerecht.</p>
           </div>
         </div>
 
@@ -894,8 +926,8 @@
           <div class="prozess-num">04</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 04</div>
-            <h3 class="prozess-title">Fachgerechte Reparatur</h3>
-            <p class="prozess-body">Unser erfahrenes Team repariert Ihr Fahrzeug präzise nach Herstellervorgaben. Wir halten Sie über den Fortschritt auf dem Laufenden.</p>
+            <h3 class="prozess-title">Normgerechte Ausführung</h3>
+            <p class="prozess-body">Installation nach DIN VDE, sauber mit Kabelkanälen und vollständiger Beschriftung — kein Chaos hinter der Unterputzdose.</p>
           </div>
         </div>
 
@@ -903,8 +935,8 @@
           <div class="prozess-num">05</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 05</div>
-            <h3 class="prozess-title">Qualitätskontrolle &amp; Übergabe</h3>
-            <p class="prozess-body">Abschließende Probefahrt, vollständige Dokumentation aller durchgeführten Arbeiten und persönliche Übergabe — alles im grünen Bereich.</p>
+            <h3 class="prozess-title">Abnahme &amp; Prüfprotokoll</h3>
+            <p class="prozess-body">Messung aller Schutzmaßnahmen, Übergabe des VDE-Prüfprotokolls, Einweisung und Gewährleistungsurkunde.</p>
           </div>
         </div>
 
@@ -915,12 +947,13 @@
   </div>
 </section>
 
+<!-- ═══ REFERENZEN ════════════════════════════════════════════════════ -->
 <section id="referenzen" aria-label="Referenzprojekte">
   <div class="ref-wrap">
     <div class="ref-hd reveal">
       <p class="sec-label sec-label-l">Unsere Arbeit</p>
-      <h2 class="sec-h2 sec-h2-l">Fahrzeuge, die <em>wieder laufen</em></h2>
-      <p class="sec-lead sec-lead-l">Jedes Bild erzählt eine Geschichte — von präziser Handarbeit und Qualität, die überzeugt.</p>
+      <h2 class="sec-h2 sec-h2-l">Projekte, die <em>sprechen</em></h2>
+      <p class="sec-lead sec-lead-l">Jedes Bild erzählt eine Geschichte — von präziser Handarbeit und Qualität, die bleibt.</p>
     </div>
     <div class="ref-grid">
       <div class="ref-item wide">
@@ -929,8 +962,8 @@
         </div>
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
-            <div class="ref-info-title">Motorrevision</div>
-            <div class="ref-info-sub">Borna · 2024</div>
+            <div class="ref-info-title">[Hauptprojekt-Titel]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -940,8 +973,8 @@
         </div>
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
-            <div class="ref-info-title">HU-Vorbereitung</div>
-            <div class="ref-info-sub">Borna · 2024</div>
+            <div class="ref-info-title">[Projektname]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -951,8 +984,8 @@
         </div>
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
-            <div class="ref-info-title">Reifenservice</div>
-            <div class="ref-info-sub">Borna · 2024</div>
+            <div class="ref-info-title">[Projektname]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -962,8 +995,8 @@
         </div>
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
-            <div class="ref-info-title">Bremsenreparatur</div>
-            <div class="ref-info-sub">Borna · 2024</div>
+            <div class="ref-info-title">[Projektname]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -973,8 +1006,8 @@
         </div>
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
-            <div class="ref-info-title">Elektrik &amp; Diagnose</div>
-            <div class="ref-info-sub">Borna · 2024</div>
+            <div class="ref-info-title">[Projektname]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -982,6 +1015,7 @@
   </div>
 </section>
 
+<!-- ═══ TESTIMONIALS ══════════════════════════════════════════════════ -->
 <section id="stimmen" aria-label="Kundenstimmen">
   <div class="stimmen-wrap">
     <div class="stimmen-hd reveal">
@@ -991,34 +1025,34 @@
     <div class="stimmen-grid">
       <div class="stimme-card">
         <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-        <p class="stimme-quote">„Absolut professionell — schnelle Diagnose, faire Preise, saubere Arbeit. Mein Auto war innerhalb eines Tages fertig. Klare Empfehlung!"</p>
+        <p class="stimme-quote">„Absolut professionell — von der ersten Beratung bis zur Übergabe. Sauberste Arbeit, termingerecht, faire Preise. Klare Empfehlung!"</p>
         <div class="stimme-author">
           <div class="author-avi" aria-hidden="true">MK</div>
           <div>
             <div class="author-name">Michael K.</div>
-            <div class="author-loc">Borna</div>
+            <div class="author-loc">Niesky</div>
           </div>
         </div>
       </div>
       <div class="stimme-card">
         <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-        <p class="stimme-quote">„Endlich eine Werkstatt, der ich vertraue. Transparente Kostenvoranschläge, keine Überraschungen. Bin seit Jahren Stammkunde."</p>
+        <p class="stimme-quote">„Wir haben Klaus Wilde Elektromeister für eine komplexe Smart-Home-Installation beauftragt. Das Ergebnis hat unsere Erwartungen deutlich übertroffen."</p>
         <div class="stimme-author">
           <div class="author-avi" aria-hidden="true">SB</div>
           <div>
             <div class="author-name">Sandra B.</div>
-            <div class="author-loc">Geithain</div>
+            <div class="author-loc">Niesky</div>
           </div>
         </div>
       </div>
       <div class="stimme-card">
         <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-        <p class="stimme-quote">„Super Werkstatt! HU-Vorbereitung top gemacht, alles erklärt, Termin eingehalten. Werden wir definitiv wieder beauftragen."</p>
+        <p class="stimme-quote">„Schnell, unkompliziert, top Ergebnis. Endlich ein Betrieb, der hält, was er verspricht. Werden wir definitiv wieder beauftragen."</p>
         <div class="stimme-author">
           <div class="author-avi" aria-hidden="true">TL</div>
           <div>
             <div class="author-name">Thomas L.</div>
-            <div class="author-loc">Borna</div>
+            <div class="author-loc">Niesky</div>
           </div>
         </div>
       </div>
@@ -1026,12 +1060,13 @@
   </div>
 </section>
 
+<!-- ═══ KONTAKT ═══════════════════════════════════════════════════════ -->
 <section id="kontakt" aria-label="Kontakt aufnehmen">
   <div class="kontakt-inner">
     <div class="kontakt-hd reveal">
       <p class="sec-label sec-label-d">Kontakt aufnehmen</p>
-      <h2 class="sec-h2 sec-h2-d">Ihren Termin <em>vereinbaren</em></h2>
-      <p class="sec-lead sec-lead-d">Beschreiben Sie kurz Ihr Anliegen — wir melden uns schnellstmöglich zurück.</p>
+      <h2 class="sec-h2 sec-h2-d">Ihr Projekt <em>starten</em></h2>
+      <p class="sec-lead sec-lead-d">Beschreiben Sie kurz Ihr Vorhaben — wir melden uns innerhalb von 24 Stunden mit einem unverbindlichen Angebot.</p>
     </div>
     <div class="form-box reveal d1">
       <form id="contactForm" novalidate>
@@ -1052,25 +1087,24 @@
           </div>
           <div class="f-group" style="margin-bottom:0">
             <label class="f-lbl" for="telefon">Telefon</label>
-            <input class="f-ctrl" type="tel" id="telefon" name="telefon" placeholder="+49 …" autocomplete="tel">
+            <input class="f-ctrl" type="tel" id="telefon" name="telefon" placeholder="+49 351 …" autocomplete="tel">
           </div>
         </div>
         <div class="f-group" style="margin-top:12px">
           <label class="f-lbl" for="leistung">Gewünschte Leistung</label>
           <select class="f-ctrl" id="leistung" name="leistung" style="cursor:pointer;appearance:none;">
             <option value="">Bitte auswählen …</option>
-            <option>Inspektion &amp; Wartung</option>
-            <option>Motor &amp; Getriebe</option>
-            <option>HU/AU-Vorbereitung</option>
-            <option>Reifenservice</option>
-            <option>Elektrik &amp; Diagnose</option>
-            <option>Unfallreparatur</option>
+            <option>Elektroinstallation</option>
+            <option>Smart Home &amp; KNX</option>
+            <option>Photovoltaik &amp; Wallbox</option>
+            <option>E-Check &amp; Prüfung</option>
+            <option>Notdienst</option>
             <option>Sonstiges</option>
           </select>
         </div>
         <div class="f-group">
-          <label class="f-lbl" for="nachricht">Ihr Anliegen</label>
-          <textarea class="f-ctrl" id="nachricht" name="nachricht" rows="4" placeholder="Beschreiben Sie kurz das Problem oder Ihren Wunsch …"></textarea>
+          <label class="f-lbl" for="nachricht">Ihr Vorhaben</label>
+          <textarea class="f-ctrl" id="nachricht" name="nachricht" rows="4" placeholder="Beschreiben Sie kurz Ihr Projekt …"></textarea>
         </div>
         <button type="submit" class="f-submit">Anfrage senden →</button>
       </form>
@@ -1082,19 +1116,20 @@
   </div>
 </section>
 
+<!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-name">Frank Frommhold KFZ-Service</div>
-      <p class="footer-desc">Ihr KFZ-Meisterbetrieb für Inspektion, Reparatur und Reifenservice in Borna.</p>
+      <div class="footer-name">Klaus Wilde Elektromeister</div>
+      <p class="footer-desc">Ihr Elektromeisterbetrieb in Niesky — zuverlässig, normgerecht und persönlich.</p>
     </div>
     <div>
       <div class="footer-col-title">Leistungen</div>
       <ul class="footer-links" role="list">
-        <li><a href="#">Inspektion &amp; Wartung</a></li>
-        <li><a href="#">Motor &amp; Getriebe</a></li>
-        <li><a href="#">HU/AU-Vorbereitung</a></li>
-        <li><a href="#">Reifenservice</a></li>
+        <li><a href="#">Elektroinstallation</a></li>
+        <li><a href="#">Smart Home</a></li>
+        <li><a href="#">Photovoltaik</a></li>
+        <li><a href="#">E-Check &amp; Prüfung</a></li>
       </ul>
     </div>
     <div>
@@ -1109,14 +1144,14 @@
     <div>
       <div class="footer-col-title">Kontakt</div>
       <ul class="footer-links" role="list">
-        <li><a href="tel:03433204548">03433 204548</a></li>
-        <li><a href="mailto:kfz-service-frommhold@t-online.de">kfz-service-frommhold@t-online.de</a></li>
-        <li><a href="#">Leipziger Str. 115, 04552 Borna</a></li>
+        <li><a href="tel:03588 204850">03588 204850</a></li>
+        <li><a href="mailto:Klaus-Wilde@t-online.de">Klaus-Wilde@t-online.de</a></li>
+        <li><a href="#">Helmut-Just-Str. 43, 02906 Niesky</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-btm">
-    <p>© 2025 Frank Frommhold KFZ-Service. Alle Rechte vorbehalten.</p>
+    <p>© 2025 Klaus Wilde Elektromeister. Alle Rechte vorbehalten.</p>
     <div class="footer-btm-links">
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
@@ -1124,10 +1159,12 @@
   </div>
 </footer>
 
+<!-- ═══ JAVASCRIPT ════════════════════════════════════════════════════ -->
 <script>
 (function () {
   'use strict';
 
+  /* ── Video fallback ── */
   const vid = document.getElementById('heroVideo');
   const fallback = document.getElementById('heroFallback');
   if (vid) {
@@ -1135,12 +1172,9 @@
       vid.style.display = 'none';
       if (fallback) fallback.style.display = 'block';
     });
-    if (!vid.src || vid.src === window.location.href) {
-      vid.style.display = 'none';
-      if (fallback) fallback.style.display = 'block';
-    }
   }
 
+  /* ── Nav scroll class ── */
   const navbar = document.getElementById('navbar');
   function syncNav() {
     navbar.classList.toggle('scrolled', window.scrollY > 56);
@@ -1148,6 +1182,7 @@
   window.addEventListener('scroll', syncNav, { passive: true });
   syncNav();
 
+  /* ── Hero content: scroll-driven opacity + blur ── */
   const heroContent = document.getElementById('heroContent');
   function syncHero() {
     const progress = Math.min(window.scrollY / (window.innerHeight * 0.55), 1);
@@ -1156,6 +1191,7 @@
   }
   window.addEventListener('scroll', syncHero, { passive: true });
 
+  /* ── IntersectionObserver: .reveal, .card-bubble, .stimme-card ── */
   const io = new IntersectionObserver((entries) => {
     entries.forEach(({ target, isIntersecting }) => {
       if (!isIntersecting) return;
@@ -1167,6 +1203,7 @@
 
   document.querySelectorAll('.reveal, .card-bubble, .stimme-card').forEach(el => io.observe(el));
 
+  /* ── Count-up for trust numbers ── */
   function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
   const countIO = new IntersectionObserver((entries) => {
     entries.forEach(({ target, isIntersecting }) => {
@@ -1189,6 +1226,7 @@
   }, { threshold: 0.5 });
   document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
 
+  /* ── 3D Card: smooth mouse-parallax + scroll rotation ── */
   const toolCard = document.getElementById('toolCard');
   if (toolCard) {
     let tRX = 0, tRY = 0, cRX = 0, cRY = 0;
@@ -1215,7 +1253,15 @@
     });
     toolCard.addEventListener('mouseleave',  () => { hovering = false; tRX = tRY = 0; if (!raf) raf = requestAnimationFrame(lerpCard); });
     toolCard.addEventListener('mouseenter',  () => { hovering = true; });
+    toolCard.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const r = toolCard.getBoundingClientRect();
+      tRY = ((touch.clientX - r.left - r.width  / 2) / (r.width  / 2)) * 14;
+      tRX = -((touch.clientY - r.top  - r.height / 2) / (r.height / 2)) * 10;
+      if (!raf) raf = requestAnimationFrame(lerpCard);
+    }, { passive: true });
 
+    /* Scroll rotation when cursor is elsewhere */
     const sec3d = document.getElementById('tool3d');
     function onScrollTool() {
       if (hovering || !sec3d) return;
@@ -1231,6 +1277,7 @@
     secIO.observe(sec3d);
   }
 
+  /* ── Horizontal Prozess Scroll ── */
   const prozessSection = document.getElementById('prozess');
   const prozessTrack   = document.getElementById('prozessTrack');
   const prozessBar     = document.getElementById('prozessBar');
@@ -1250,6 +1297,7 @@
     syncProzess();
   }
 
+  /* ── Contact form submit ── */
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -1259,6 +1307,7 @@
       btn.style.background = 'linear-gradient(135deg, #2D9E6B 0%, #1E7A52 100%)';
       btn.style.color = '#fff';
       btn.disabled = true;
+      // → Hier Backend-Integration einfügen (Netlify Forms / Formspree / eigene API)
     });
   }
 

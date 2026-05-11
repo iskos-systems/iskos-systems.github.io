@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="de" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Frank Frommhold KFZ-Service — KFZ-Meisterbetrieb in Borna</title>
-  <meta name="description" content="Frank Frommhold KFZ-Service — Ihr KFZ-Meisterbetrieb in Borna. Inspektion, Reparatur, HU/AU-Vorbereitung und Reifenservice. Jetzt Termin vereinbaren.">
+  <title>Frank Radenz SHS Sanitär-Heizung-Solar — Heizung · Sanitär · Klempner in Mockrehna</title>
+  <meta name="description" content="Frank Radenz SHS Sanitär-Heizung-Solar — Ihr SHK-Meisterbetrieb für Heizung, Sanitär und Klempnerarbeiten in Mockrehna. Wärmepumpe, Badsanierung, Notdienst. Jetzt anfragen.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -26,6 +26,7 @@
     }
   </script>
   <style>
+    /* ─── Reset & Base ─── */
     *, *::before, *::after { box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; text-rendering: optimizeLegibility; }
     body {
@@ -43,6 +44,7 @@
     ::-webkit-scrollbar-thumb { background: #2A2A30; border-radius: 2px; }
     ::selection { background: #3B8FD4; color: #0A0A0B; }
 
+    /* ─── Variables ─── */
     :root {
       --dark:   #0A0A0B;
       --dark2:  #141417;
@@ -64,6 +66,7 @@
       --gb:     rgba(255,255,255,.11);
     }
 
+    /* ─── NAV ─── */
     #navbar {
       position: fixed; inset: 0 0 auto; z-index: 1000;
       transition: background .35s, backdrop-filter .35s, border-color .35s;
@@ -114,6 +117,7 @@
       transform: translateY(-1px);
     }
 
+    /* ─── HERO ─── */
     #hero {
       position: relative; width: 100%; height: 100vh; min-height: 680px;
       display: flex; align-items: center; justify-content: center;
@@ -123,7 +127,7 @@
     .hero-video-wrap video { width: 100%; height: 100%; object-fit: cover; }
     .hero-fallback {
       width: 100%; height: 100%;
-      background: radial-gradient(ellipse at 30% 60%, #0E1A2A 0%, #0A0A0B 70%);
+      background: radial-gradient(ellipse at 30% 60%, #2A1E0E 0%, #0A0A0B 70%);
     }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -144,6 +148,9 @@
       display: inline-flex; align-items: center; gap: 12px;
       font-size: 10.5px; font-weight: 700; letter-spacing: .18em;
       text-transform: uppercase; color: var(--acc); margin-bottom: 22px;
+    }
+    .hero-eyebrow span::before, .hero-eyebrow span::after {
+      content: none;
     }
     .hero-eyebrow::before, .hero-eyebrow::after {
       content: ''; display: block; width: 24px; height: 1px;
@@ -208,6 +215,7 @@
       50% { opacity: .9; transform: scaleY(.65) translateY(-3px); }
     }
 
+    /* ─── TRUST BAR ─── */
     #trust {
       background: var(--dark2);
       border-top: 1px solid rgba(255,255,255,.05);
@@ -237,6 +245,7 @@
       color: var(--td60); letter-spacing: .04em;
     }
 
+    /* ─── SECTION SHARED ─── */
     .sec-label {
       font-size: 10.5px; font-weight: 700; letter-spacing: .15em;
       text-transform: uppercase; margin-bottom: 10px;
@@ -259,6 +268,7 @@
     .sec-lead-d { color: var(--td60); }
     .sec-lead-l { color: var(--tl60); }
 
+    /* ─── LEISTUNGEN / CARDS ─── */
     #leistungen {
       background: var(--light);
       padding: clamp(72px,9vw,120px) clamp(20px,4vw,56px);
@@ -271,6 +281,7 @@
       gap: 18px;
     }
 
+    /* Glossy Bubble Card */
     .card-bubble {
       position: relative; padding: 34px 30px 30px; border-radius: 26px;
       background: #FFFFFF;
@@ -297,6 +308,7 @@
         inset 0 1px 0 rgba(255,255,255,.95);
       transform: translateY(-5px) scale(1.01) !important;
     }
+    /* Glass sheen */
     .card-bubble::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0; height: 55%;
@@ -315,7 +327,7 @@
       display: inline-block; margin-bottom: 14px;
       font-size: 10px; font-weight: 700; letter-spacing: .1em;
       text-transform: uppercase; padding: 4px 10px; border-radius: 100px;
-      background: rgba(59,143,212,.1); color: var(--acc2);
+      background: rgba(184,146,42,.1); color: var(--acc2);
     }
     .card-title {
       font-size: 19px; font-weight: 700; color: var(--tl);
@@ -331,6 +343,7 @@
     }
     .card-bubble:hover .card-cta { gap: 9px; }
 
+    /* ─── 3D TOOL ─── */
     #tool3d {
       background: var(--dark);
       padding: clamp(72px,9vw,120px) clamp(20px,4vw,56px);
@@ -360,6 +373,7 @@
     }
     .feat-text p { font-size: 12.5px; color: var(--td60); line-height: 1.5; }
 
+    /* 3D Interactive Card */
     .tool3d-scene {
       perspective: 1200px;
       display: flex; align-items: center; justify-content: center;
@@ -379,6 +393,7 @@
       transition: transform .08s linear;
     }
     @media(max-width:480px){ .tool3d-card { width: 260px; height: 320px; } }
+    /* Mouse-tracking glow */
     .tool3d-card::after {
       content: '';
       position: absolute; inset: 0; pointer-events: none;
@@ -413,6 +428,7 @@
     }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
 
+    /* ─── PROZESS (Horizontal Scroll) ─── */
     #prozess {
       height: 220vh;
       background: var(--dark);
@@ -464,12 +480,14 @@
       letter-spacing: -.02em; margin-bottom: 8px;
     }
     .prozess-body { font-size: 13px; line-height: 1.7; color: var(--td60); }
+    /* Bottom progress bar */
     #prozessBar {
       position: absolute; bottom: 0; left: 0;
       height: 2px; background: var(--acc); width: 0%;
       transition: width .08s linear;
     }
 
+    /* ─── REFERENZEN ─── */
     #referenzen {
       background: var(--light);
       padding: clamp(72px,9vw,120px) clamp(20px,4vw,56px);
@@ -498,6 +516,11 @@
       transition: transform .6s cubic-bezier(.25,.46,.45,.94);
     }
     .ref-item:hover .ref-placeholder { transform: scale(1.06); }
+    .ref-img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .6s cubic-bezier(.25,.46,.45,.94);
+    }
+    .ref-item:hover .ref-img { transform: scale(1.06); }
     .ref-info {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(0,0,0,.72) 0%, transparent 55%);
@@ -513,6 +536,7 @@
     .ref-info-title { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
     .ref-info-sub { font-size: 12px; opacity: .65; }
 
+    /* ─── TESTIMONIALS ─── */
     #stimmen {
       background: var(--dark);
       padding: clamp(72px,9vw,120px) clamp(20px,4vw,56px);
@@ -547,6 +571,7 @@
     .author-name { font-size: 13.5px; font-weight: 600; color: var(--td); }
     .author-loc  { font-size: 11.5px; color: var(--td30); }
 
+    /* ─── KONTAKT ─── */
     #kontakt {
       background: var(--dark2);
       padding: clamp(72px,9vw,120px) clamp(20px,4vw,56px);
@@ -600,6 +625,7 @@
       margin-top: 14px; font-size: 11.5px; color: var(--td30);
     }
 
+    /* ─── FOOTER ─── */
     footer {
       background: var(--dark);
       border-top: 1px solid rgba(255,255,255,.05);
@@ -629,6 +655,7 @@
     .footer-btm a:hover { color: var(--td60); }
     .footer-btm-links { display: flex; gap: 18px; }
 
+    /* ─── REVEAL UTILITY ─── */
     .reveal {
       opacity: 0; transform: translateY(22px);
       transition: opacity .6s ease, transform .7s cubic-bezier(.22,.68,0,1.2);
@@ -641,11 +668,12 @@
 </head>
 <body>
 
+<!-- ═══ NAV ═══════════════════════════════════════════════════════════ -->
 <nav id="navbar" role="navigation" aria-label="Hauptnavigation">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <div class="nav-logo-pip"></div>
-      Frank Frommhold KFZ-Service
+      Frank Radenz SHS Sanitär-Heizung-Solar
     </a>
     <ul class="nav-links" role="list">
       <li><a href="#leistungen">Leistungen</a></li>
@@ -658,26 +686,29 @@
   </div>
 </nav>
 
+<!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
 <section id="hero" aria-label="Hero">
   <div class="hero-video-wrap">
+    <!-- ► Ersetze src mit echtem Video-Link.
+         Empfehlung: 1920×1080, H.264, max 6 MB, loop 10–20s -->
     <video autoplay muted loop playsinline id="heroVideo">
-      <source src="" type="video/mp4">
+      <source src=".mp4" type="video/mp4">
     </video>
     <div class="hero-fallback" id="heroFallback" style="display:none;"></div>
     <div class="hero-overlay"></div>
   </div>
 
   <div id="heroContent">
-    <div class="hero-eyebrow">KFZ-Meisterbetrieb · Borna</div>
-    <h1 class="hero-h1">Ihr Auto.<br><em>In besten Händen.</em></h1>
-    <p class="hero-sub">Wir inspizieren, reparieren und warten Ihr Fahrzeug — von der HU-Vorbereitung bis zum Reifenservice. Schnell, zuverlässig, fair.</p>
+    <div class="hero-eyebrow">SHK-Meisterbetrieb · Mockrehna</div>
+    <h1 class="hero-h1">Ihr Heizung &amp; Solar-Betrieb<br><em>in Mockrehna und Umgebung</em></h1>
+    <p class="hero-sub">Wir planen, installieren und warten Ihre Heizungs- und Sanitäranlagen — von der Wärmepumpe bis zur Badsanierung.</p>
     <div class="hero-ctas">
       <a href="#kontakt" class="btn-primary">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Termin vereinbaren
       </a>
-      <a href="#leistungen" class="btn-secondary">
-        Leistungen ansehen
+      <a href="#referenzen" class="btn-secondary">
+        Projekte ansehen
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
       </a>
     </div>
@@ -689,15 +720,16 @@
   </div>
 </section>
 
+<!-- ═══ TRUST BAR ═════════════════════════════════════════════════════ -->
 <section id="trust" aria-label="Kennzahlen">
   <div class="trust-grid">
     <div class="trust-item">
-      <span class="trust-num" data-count="25">0</span>
+      <span class="trust-num" data-count="35">0</span>
       <span class="trust-lbl">Jahre Erfahrung</span>
     </div>
     <div class="trust-item">
-      <span class="trust-num" data-count="3500">0</span>
-      <span class="trust-lbl">Fahrzeuge gewartet</span>
+      <span class="trust-num" data-count="800">0</span>
+      <span class="trust-lbl">Abgeschlossene Projekte</span>
     </div>
     <div class="trust-item">
       <span class="trust-num">98%</span>
@@ -710,22 +742,24 @@
   </div>
 </section>
 
+<!-- ═══ LEISTUNGEN ════════════════════════════════════════════════════ -->
 <section id="leistungen" aria-label="Leistungen">
   <div class="cards-wrap">
     <div class="cards-header reveal">
       <p class="sec-label sec-label-l">Was wir bieten</p>
       <h2 class="sec-h2 sec-h2-l">Expertise, die <em>überzeugt</em></h2>
-      <p class="sec-lead sec-lead-l">Jedes Fahrzeug mit höchster Sorgfalt behandelt. Qualität ist kein Zufall — sie ist unser Standard.</p>
+      <p class="sec-lead sec-lead-l">Jedes Projekt mit höchster Sorgfalt umgesetzt. Qualität ist kein Zufall — sie ist unser Standard seit über 35 Jahren.</p>
     </div>
     <div class="cards-grid">
 
       <div class="card-bubble" data-delay="0">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <!-- Icon: Flame / Heizung -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 6-6 8-6 14a6 6 0 0 0 12 0c0-6-6-8-6-14z"/></svg>
         </div>
-        <div class="card-tag">Wartung</div>
-        <h3 class="card-title">Inspektion &amp; Wartung</h3>
-        <p class="card-body">Regelmäßige Inspektionen nach Herstellervorgaben, Ölwechsel, Filter- und Flüssigkeitstausch — für maximale Fahrzeugsicherheit und Langlebigkeit.</p>
+        <div class="card-tag">Heizung</div>
+        <h3 class="card-title">Heizungsmodernisierung</h3>
+        <p class="card-body">Wärmepumpe, Gasheizung, Pellets — wir planen die optimale Heizlösung für Ihr Gebäude und übernehmen die komplette Installation.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -734,11 +768,12 @@
 
       <div class="card-bubble" data-delay="110">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <!-- Icon: Droplets / Sanitär -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
         </div>
-        <div class="card-tag">Reparatur</div>
-        <h3 class="card-title">Motor &amp; Getriebe</h3>
-        <p class="card-body">Diagnose und Reparatur aller Motor- und Getriebeprobleme. Moderne Diagnosetechnik für schnelle, präzise Fehleranalyse und fachgerechte Instandsetzung.</p>
+        <div class="card-tag">Sanitär</div>
+        <h3 class="card-title">Badsanierung &amp; Installation</h3>
+        <p class="card-body">Von der Modernisierung des bestehenden Bades bis zur Neuinstallation — wir setzen Ihre Badezimmerträume handwerksgerecht um.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -747,11 +782,12 @@
 
       <div class="card-bubble" data-delay="220">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+          <!-- Icon: Wrench / Klempner -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <div class="card-tag">Prüfung</div>
-        <h3 class="card-title">HU/AU-Vorbereitung</h3>
-        <p class="card-body">Wir bereiten Ihr Fahrzeug gezielt auf die Hauptuntersuchung vor — alle relevanten Punkte geprüft, Mängel behoben, sicher durch den TÜV.</p>
+        <div class="card-tag">Klempner</div>
+        <h3 class="card-title">Rohrleitungsbau &amp; Reparatur</h3>
+        <p class="card-body">Druckdichte Installationen, schnelle Leckage-Ortung und fachgerechte Reparatur aller Rohrleitungssysteme — termingerecht und sauber.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -760,11 +796,12 @@
 
       <div class="card-bubble" data-delay="330">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+          <!-- Icon: Clock / Service -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <div class="card-tag">Reifen</div>
-        <h3 class="card-title">Reifenservice</h3>
-        <p class="card-body">Reifenmontage, -wuchtung und saisonaler Wechsel. Fachgerechte Einlagerung möglich. Kompetente Beratung zur richtigen Reifenwahl für Ihr Fahrzeug.</p>
+        <div class="card-tag">Service</div>
+        <h3 class="card-title">Wartung &amp; 24h-Notdienst</h3>
+        <p class="card-body">Regelmäßige Wartungsverträge verlängern die Lebensdauer Ihrer Anlage. Bei Havarie sind wir rund um die Uhr für Sie erreichbar.</p>
         <a href="#kontakt" class="card-cta">
           Anfragen
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -775,12 +812,14 @@
   </div>
 </section>
 
+<!-- ═══ 3D TOOL (Mouse-Parallax) ══════════════════════════════════════ -->
 <section id="tool3d" aria-label="Ausstattung">
   <div class="tool3d-inner">
 
+    <!-- Text Left -->
     <div class="reveal">
       <p class="sec-label sec-label-d">Technologie &amp; Qualität</p>
-      <h2 class="sec-h2 sec-h2-d">Modernste <em>Diagnosetechnik</em></h2>
+      <h2 class="sec-h2 sec-h2-d">Modernste <em>Ausstattung</em></h2>
       <p class="sec-lead sec-lead-d">Präzision entsteht nicht durch Zufall. Wir investieren in die besten Werkzeuge — für Ergebnisse, die überzeugen.</p>
       <div class="tool3d-feats">
         <div class="tool3d-feat">
@@ -788,8 +827,8 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <div class="feat-text">
-            <h4>Profi-Diagnosegeräte, aktueller Stand</h4>
-            <p>Fehlersuche bei allen Fahrzeugmarken, auch Elektro &amp; Hybrid</p>
+            <h4>Profi-Equipment, aktueller Jahrgang</h4>
+            <p>Modernste Geräte für millimetergenaue Ergebnisse</p>
           </div>
         </div>
         <div class="tool3d-feat">
@@ -806,16 +845,18 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <div class="feat-text">
-            <h4>2 Jahre Gewährleistung auf Reparaturen</h4>
-            <p>Jede Reparatur mit voller gesetzlicher Absicherung</p>
+            <h4>5 Jahre Handwerkergewährleistung</h4>
+            <p>Jedes Projekt mit voller gesetzlicher Absicherung</p>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Interactive 3D Card Right -->
     <div class="tool3d-scene">
-      <div class="tool3d-card" id="toolCard" role="img" aria-label="Interaktive KFZ-Illustration">
+      <div class="tool3d-card" id="toolCard" role="img" aria-label="Interaktive Werkzeug-Illustration">
         <div class="tool3d-card-body">
+          <!-- Premium Wrench SVG -->
           <svg class="tool-svg" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="wg" x1="35" y1="115" x2="125" y2="35" gradientUnits="userSpaceOnUse">
@@ -824,27 +865,30 @@
                 <stop offset="68%"  stop-color="#3B8FD4"/>
                 <stop offset="100%" stop-color="#6BAEE0"/>
               </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+              </filter>
             </defs>
             <circle cx="80" cy="80" r="70" fill="rgba(59,143,212,.05)" stroke="rgba(59,143,212,.12)" stroke-width="1"/>
             <circle cx="80" cy="80" r="50" fill="none" stroke="rgba(59,143,212,.07)" stroke-width="1" stroke-dasharray="3.5 5"/>
-            <!-- Car body -->
-            <rect x="30" y="82" width="100" height="32" rx="6" fill="url(#wg)" stroke="rgba(59,143,212,.35)" stroke-width="1.5"/>
-            <path d="M45 82 L60 58 L100 58 L115 82 Z" fill="url(#wg)" stroke="rgba(59,143,212,.35)" stroke-width="1.5"/>
-            <!-- Windows -->
-            <path d="M62 80 L68 63 L92 63 L98 80 Z" fill="rgba(59,143,212,.2)" stroke="rgba(59,143,212,.5)" stroke-width="1"/>
-            <!-- Wheels -->
-            <circle cx="53" cy="114" r="13" fill="#141417" stroke="rgba(59,143,212,.45)" stroke-width="2"/>
-            <circle cx="53" cy="114" r="5" fill="none" stroke="rgba(59,143,212,.55)" stroke-width="1.5"/>
-            <circle cx="107" cy="114" r="13" fill="#141417" stroke="rgba(59,143,212,.45)" stroke-width="2"/>
-            <circle cx="107" cy="114" r="5" fill="none" stroke="rgba(59,143,212,.55)" stroke-width="1.5"/>
+            <!-- Wrench body -->
+            <path d="M96 39 C102 28 118 26 126 35 C134 44 131 60 120 65 L73 112 C68 122 51 124 43 115 C35 107 37 91 48 86 Z"
+                  fill="url(#wg)" stroke="rgba(59,143,212,.35)" stroke-width="1.5"/>
+            <!-- Upper jaw notch -->
+            <path d="M96 39 L105 30 M89 46 L102 34" stroke="rgba(59,143,212,.55)" stroke-width="2" stroke-linecap="round"/>
+            <!-- Lower jaw notch -->
+            <path d="M48 86 L57 77 M41 93 L53 82" stroke="rgba(59,143,212,.55)" stroke-width="2" stroke-linecap="round"/>
+            <!-- Center hole -->
+            <circle cx="84" cy="77" r="5.5" fill="none" stroke="rgba(59,143,212,.45)" stroke-width="1.5"/>
             <!-- Shine -->
-            <path d="M65 70 Q80 60 95 70" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M99 43 C104 38 111 37 115 41 L102 54 C97 50 95 47 99 43Z" fill="rgba(255,255,255,.11)"/>
           </svg>
-          <div class="tool-card-lbl">KFZ-Meisterbetrieb</div>
-          <div class="tool-card-name">Frank Frommhold KFZ-Service</div>
+          <div class="tool-card-lbl">SHK-Meisterbetrieb</div>
+          <div class="tool-card-name">Frank Radenz SHS Sanitär-Heizung-Solar</div>
           <div class="tool-badge">
             <div class="tool-badge-dot"></div>
-            Aktiv in Borna
+            Aktiv in Mockrehna
           </div>
         </div>
       </div>
@@ -853,11 +897,12 @@
   </div>
 </section>
 
+<!-- ═══ PROZESS (Horizontal Scroll) ══════════════════════════════════ -->
 <section id="prozess" aria-label="Unser Prozess">
   <div class="prozess-sticky">
     <div class="prozess-hd">
       <p class="sec-label sec-label-d reveal">Wie wir arbeiten</p>
-      <h2 class="sec-h2 sec-h2-d reveal d1">Von der Diagnose <em>zur Übergabe</em></h2>
+      <h2 class="sec-h2 sec-h2-d reveal d1">Von der Planung <em>zur Umsetzung</em></h2>
     </div>
     <div class="prozess-track-wrap">
       <div class="prozess-track" id="prozessTrack">
@@ -867,8 +912,8 @@
           <div class="prozess-num">01</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 01</div>
-            <h3 class="prozess-title">Fahrzeugaufnahme &amp; Diagnose</h3>
-            <p class="prozess-body">Wir nehmen Ihr Fahrzeug entgegen, besprechen Ihre Beschwerden und führen eine vollständige elektronische Diagnose durch — transparent und kostenlos.</p>
+            <h3 class="prozess-title">Bestandsaufnahme &amp; Beratung</h3>
+            <p class="prozess-body">Wir analysieren Ihre vorhandene Anlage, besprechen Ihre Wünsche und Fördermöglichkeiten (BAFA, KfW) — kostenlos und unverbindlich.</p>
           </div>
         </div>
 
@@ -876,8 +921,8 @@
           <div class="prozess-num">02</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 02</div>
-            <h3 class="prozess-title">Kostenvoranschlag</h3>
-            <p class="prozess-body">Klare Auflistung aller notwendigen Arbeiten und Ersatzteile — keine versteckten Kosten, keine Überraschungen. Erst nach Ihrer Freigabe geht es los.</p>
+            <h3 class="prozess-title">Planung &amp; Angebot</h3>
+            <p class="prozess-body">Detaillierte Systemplanung inkl. Hydraulikschema, transparente Festpreiskalkulation — ohne versteckte Positionen.</p>
           </div>
         </div>
 
@@ -885,8 +930,8 @@
           <div class="prozess-num">03</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 03</div>
-            <h3 class="prozess-title">Ersatzteilbeschaffung</h3>
-            <p class="prozess-body">Wir beschaffen alle Teile schnell von zuverlässigen Lieferanten — Originalqualität oder gleichwertige Markenwaren, je nach Ihrem Wunsch.</p>
+            <h3 class="prozess-title">Materiallogistik</h3>
+            <p class="prozess-body">Wir beschaffen alle Komponenten — von Markenherstellern, termingerecht zur Baustelle geliefert.</p>
           </div>
         </div>
 
@@ -894,8 +939,8 @@
           <div class="prozess-num">04</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 04</div>
-            <h3 class="prozess-title">Fachgerechte Reparatur</h3>
-            <p class="prozess-body">Unser erfahrenes Team repariert Ihr Fahrzeug präzise nach Herstellervorgaben. Wir halten Sie über den Fortschritt auf dem Laufenden.</p>
+            <h3 class="prozess-title">Fachgerechte Montage</h3>
+            <p class="prozess-body">Unser eingespieltes Team installiert präzise, hält alle Normen ein und hält Sie täglich auf dem Laufenden.</p>
           </div>
         </div>
 
@@ -903,8 +948,8 @@
           <div class="prozess-num">05</div>
           <div class="prozess-card">
             <div class="prozess-tag">Schritt 05</div>
-            <h3 class="prozess-title">Qualitätskontrolle &amp; Übergabe</h3>
-            <p class="prozess-body">Abschließende Probefahrt, vollständige Dokumentation aller durchgeführten Arbeiten und persönliche Übergabe — alles im grünen Bereich.</p>
+            <h3 class="prozess-title">Inbetriebnahme &amp; Einweisung</h3>
+            <p class="prozess-body">Hydraulischer Abgleich, Abnahmeprotokoll, BAFA-Antrag und ausführliche Einweisung in Ihre neue Anlage.</p>
           </div>
         </div>
 
@@ -915,12 +960,13 @@
   </div>
 </section>
 
+<!-- ═══ REFERENZEN ════════════════════════════════════════════════════ -->
 <section id="referenzen" aria-label="Referenzprojekte">
   <div class="ref-wrap">
     <div class="ref-hd reveal">
       <p class="sec-label sec-label-l">Unsere Arbeit</p>
-      <h2 class="sec-h2 sec-h2-l">Fahrzeuge, die <em>wieder laufen</em></h2>
-      <p class="sec-lead sec-lead-l">Jedes Bild erzählt eine Geschichte — von präziser Handarbeit und Qualität, die überzeugt.</p>
+      <h2 class="sec-h2 sec-h2-l">Projekte, die <em>sprechen</em></h2>
+      <p class="sec-lead sec-lead-l">Jedes Bild erzählt eine Geschichte — von präziser Handarbeit und Qualität, die bleibt.</p>
     </div>
     <div class="ref-grid">
       <div class="ref-item wide">
@@ -929,8 +975,8 @@
         </div>
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
-            <div class="ref-info-title">Motorrevision</div>
-            <div class="ref-info-sub">Borna · 2024</div>
+            <div class="ref-info-title">[Hauptprojekt-Titel]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -940,8 +986,8 @@
         </div>
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
-            <div class="ref-info-title">HU-Vorbereitung</div>
-            <div class="ref-info-sub">Borna · 2024</div>
+            <div class="ref-info-title">[Projektname]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -951,8 +997,8 @@
         </div>
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
-            <div class="ref-info-title">Reifenservice</div>
-            <div class="ref-info-sub">Borna · 2024</div>
+            <div class="ref-info-title">[Projektname]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -962,8 +1008,8 @@
         </div>
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
-            <div class="ref-info-title">Bremsenreparatur</div>
-            <div class="ref-info-sub">Borna · 2024</div>
+            <div class="ref-info-title">[Projektname]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -973,8 +1019,8 @@
         </div>
         <div class="ref-info" aria-hidden="true">
           <div class="ref-info-text">
-            <div class="ref-info-title">Elektrik &amp; Diagnose</div>
-            <div class="ref-info-sub">Borna · 2024</div>
+            <div class="ref-info-title">[Projektname]</div>
+            <div class="ref-info-sub">[Ort] · [Jahr]</div>
           </div>
         </div>
       </div>
@@ -982,6 +1028,7 @@
   </div>
 </section>
 
+<!-- ═══ TESTIMONIALS ══════════════════════════════════════════════════ -->
 <section id="stimmen" aria-label="Kundenstimmen">
   <div class="stimmen-wrap">
     <div class="stimmen-hd reveal">
@@ -991,34 +1038,34 @@
     <div class="stimmen-grid">
       <div class="stimme-card">
         <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-        <p class="stimme-quote">„Absolut professionell — schnelle Diagnose, faire Preise, saubere Arbeit. Mein Auto war innerhalb eines Tages fertig. Klare Empfehlung!"</p>
+        <p class="stimme-quote">„Absolut professionell — von der ersten Beratung bis zur Übergabe. Sauberste Arbeit, termingerecht, faire Preise. Klare Empfehlung!"</p>
         <div class="stimme-author">
           <div class="author-avi" aria-hidden="true">MK</div>
           <div>
             <div class="author-name">Michael K.</div>
-            <div class="author-loc">Borna</div>
+            <div class="author-loc">Mockrehna</div>
           </div>
         </div>
       </div>
       <div class="stimme-card">
         <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-        <p class="stimme-quote">„Endlich eine Werkstatt, der ich vertraue. Transparente Kostenvoranschläge, keine Überraschungen. Bin seit Jahren Stammkunde."</p>
+        <p class="stimme-quote">„Wir haben Frank Radenz SHS Sanitär-Heizung-Solar für eine komplexe Badsanierung beauftragt. Das Ergebnis hat unsere Erwartungen deutlich übertroffen."</p>
         <div class="stimme-author">
           <div class="author-avi" aria-hidden="true">SB</div>
           <div>
             <div class="author-name">Sandra B.</div>
-            <div class="author-loc">Geithain</div>
+            <div class="author-loc">Mockrehna</div>
           </div>
         </div>
       </div>
       <div class="stimme-card">
         <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-        <p class="stimme-quote">„Super Werkstatt! HU-Vorbereitung top gemacht, alles erklärt, Termin eingehalten. Werden wir definitiv wieder beauftragen."</p>
+        <p class="stimme-quote">„Schnell, unkompliziert, top Ergebnis. Endlich ein Betrieb, der hält, was er verspricht. Werden wir definitiv wieder beauftragen."</p>
         <div class="stimme-author">
           <div class="author-avi" aria-hidden="true">TL</div>
           <div>
             <div class="author-name">Thomas L.</div>
-            <div class="author-loc">Borna</div>
+            <div class="author-loc">Mockrehna</div>
           </div>
         </div>
       </div>
@@ -1026,12 +1073,13 @@
   </div>
 </section>
 
+<!-- ═══ KONTAKT ═══════════════════════════════════════════════════════ -->
 <section id="kontakt" aria-label="Kontakt aufnehmen">
   <div class="kontakt-inner">
     <div class="kontakt-hd reveal">
       <p class="sec-label sec-label-d">Kontakt aufnehmen</p>
-      <h2 class="sec-h2 sec-h2-d">Ihren Termin <em>vereinbaren</em></h2>
-      <p class="sec-lead sec-lead-d">Beschreiben Sie kurz Ihr Anliegen — wir melden uns schnellstmöglich zurück.</p>
+      <h2 class="sec-h2 sec-h2-d">Ihr Projekt <em>starten</em></h2>
+      <p class="sec-lead sec-lead-d">Beschreiben Sie kurz Ihr Vorhaben — wir melden uns innerhalb von 24 Stunden mit einem unverbindlichen Angebot.</p>
     </div>
     <div class="form-box reveal d1">
       <form id="contactForm" novalidate>
@@ -1052,25 +1100,24 @@
           </div>
           <div class="f-group" style="margin-bottom:0">
             <label class="f-lbl" for="telefon">Telefon</label>
-            <input class="f-ctrl" type="tel" id="telefon" name="telefon" placeholder="+49 …" autocomplete="tel">
+            <input class="f-ctrl" type="tel" id="telefon" name="telefon" placeholder="+49 351 …" autocomplete="tel">
           </div>
         </div>
         <div class="f-group" style="margin-top:12px">
           <label class="f-lbl" for="leistung">Gewünschte Leistung</label>
           <select class="f-ctrl" id="leistung" name="leistung" style="cursor:pointer;appearance:none;">
             <option value="">Bitte auswählen …</option>
-            <option>Inspektion &amp; Wartung</option>
-            <option>Motor &amp; Getriebe</option>
-            <option>HU/AU-Vorbereitung</option>
-            <option>Reifenservice</option>
-            <option>Elektrik &amp; Diagnose</option>
-            <option>Unfallreparatur</option>
+            <option>Heizungsmodernisierung</option>
+            <option>Badsanierung</option>
+            <option>Rohrleitungsarbeiten</option>
+            <option>Wartungsvertrag</option>
+            <option>Notdienst</option>
             <option>Sonstiges</option>
           </select>
         </div>
         <div class="f-group">
-          <label class="f-lbl" for="nachricht">Ihr Anliegen</label>
-          <textarea class="f-ctrl" id="nachricht" name="nachricht" rows="4" placeholder="Beschreiben Sie kurz das Problem oder Ihren Wunsch …"></textarea>
+          <label class="f-lbl" for="nachricht">Ihr Vorhaben</label>
+          <textarea class="f-ctrl" id="nachricht" name="nachricht" rows="4" placeholder="Beschreiben Sie kurz Ihr Projekt …"></textarea>
         </div>
         <button type="submit" class="f-submit">Anfrage senden →</button>
       </form>
@@ -1082,19 +1129,20 @@
   </div>
 </section>
 
+<!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-name">Frank Frommhold KFZ-Service</div>
-      <p class="footer-desc">Ihr KFZ-Meisterbetrieb für Inspektion, Reparatur und Reifenservice in Borna.</p>
+      <div class="footer-name">Frank Radenz SHS Sanitär-Heizung-Solar</div>
+      <p class="footer-desc">Ihr SHK-Meisterbetrieb für Heizung, Sanitär und Klempnerarbeiten in Mockrehna.</p>
     </div>
     <div>
       <div class="footer-col-title">Leistungen</div>
       <ul class="footer-links" role="list">
-        <li><a href="#">Inspektion &amp; Wartung</a></li>
-        <li><a href="#">Motor &amp; Getriebe</a></li>
-        <li><a href="#">HU/AU-Vorbereitung</a></li>
-        <li><a href="#">Reifenservice</a></li>
+        <li><a href="#">Heizungsinstallation</a></li>
+        <li><a href="#">Badsanierung</a></li>
+        <li><a href="#">Klempnerarbeiten</a></li>
+        <li><a href="#">Wartung &amp; Service</a></li>
       </ul>
     </div>
     <div>
@@ -1109,14 +1157,14 @@
     <div>
       <div class="footer-col-title">Kontakt</div>
       <ul class="footer-links" role="list">
-        <li><a href="tel:03433204548">03433 204548</a></li>
-        <li><a href="mailto:kfz-service-frommhold@t-online.de">kfz-service-frommhold@t-online.de</a></li>
-        <li><a href="#">Leipziger Str. 115, 04552 Borna</a></li>
+        <li><a href="tel:034244 579896">034244 579896</a></li>
+        <li><a href="mailto:frank.radenz@t-online.de">frank.radenz@t-online.de</a></li>
+        <li><a href="#">Wurzener Str. 9, 04862 Mockrehna</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-btm">
-    <p>© 2025 Frank Frommhold KFZ-Service. Alle Rechte vorbehalten.</p>
+    <p>© 2025 Frank Radenz SHS Sanitär-Heizung-Solar. Alle Rechte vorbehalten.</p>
     <div class="footer-btm-links">
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
@@ -1124,10 +1172,12 @@
   </div>
 </footer>
 
+<!-- ═══ JAVASCRIPT ════════════════════════════════════════════════════ -->
 <script>
 (function () {
   'use strict';
 
+  /* ── Video fallback ── */
   const vid = document.getElementById('heroVideo');
   const fallback = document.getElementById('heroFallback');
   if (vid) {
@@ -1135,12 +1185,9 @@
       vid.style.display = 'none';
       if (fallback) fallback.style.display = 'block';
     });
-    if (!vid.src || vid.src === window.location.href) {
-      vid.style.display = 'none';
-      if (fallback) fallback.style.display = 'block';
-    }
   }
 
+  /* ── Nav scroll class ── */
   const navbar = document.getElementById('navbar');
   function syncNav() {
     navbar.classList.toggle('scrolled', window.scrollY > 56);
@@ -1148,6 +1195,7 @@
   window.addEventListener('scroll', syncNav, { passive: true });
   syncNav();
 
+  /* ── Hero content: scroll-driven opacity + blur ── */
   const heroContent = document.getElementById('heroContent');
   function syncHero() {
     const progress = Math.min(window.scrollY / (window.innerHeight * 0.55), 1);
@@ -1156,6 +1204,7 @@
   }
   window.addEventListener('scroll', syncHero, { passive: true });
 
+  /* ── IntersectionObserver: .reveal, .card-bubble, .stimme-card ── */
   const io = new IntersectionObserver((entries) => {
     entries.forEach(({ target, isIntersecting }) => {
       if (!isIntersecting) return;
@@ -1167,6 +1216,7 @@
 
   document.querySelectorAll('.reveal, .card-bubble, .stimme-card').forEach(el => io.observe(el));
 
+  /* ── Count-up for trust numbers ── */
   function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
   const countIO = new IntersectionObserver((entries) => {
     entries.forEach(({ target, isIntersecting }) => {
@@ -1189,6 +1239,7 @@
   }, { threshold: 0.5 });
   document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
 
+  /* ── 3D Card: smooth mouse-parallax + scroll rotation ── */
   const toolCard = document.getElementById('toolCard');
   if (toolCard) {
     let tRX = 0, tRY = 0, cRX = 0, cRY = 0;
@@ -1215,7 +1266,15 @@
     });
     toolCard.addEventListener('mouseleave',  () => { hovering = false; tRX = tRY = 0; if (!raf) raf = requestAnimationFrame(lerpCard); });
     toolCard.addEventListener('mouseenter',  () => { hovering = true; });
+    toolCard.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const r = toolCard.getBoundingClientRect();
+      tRY = ((touch.clientX - r.left - r.width  / 2) / (r.width  / 2)) * 14;
+      tRX = -((touch.clientY - r.top  - r.height / 2) / (r.height / 2)) * 10;
+      if (!raf) raf = requestAnimationFrame(lerpCard);
+    }, { passive: true });
 
+    /* Scroll rotation when cursor is elsewhere */
     const sec3d = document.getElementById('tool3d');
     function onScrollTool() {
       if (hovering || !sec3d) return;
@@ -1231,6 +1290,7 @@
     secIO.observe(sec3d);
   }
 
+  /* ── Horizontal Prozess Scroll ── */
   const prozessSection = document.getElementById('prozess');
   const prozessTrack   = document.getElementById('prozessTrack');
   const prozessBar     = document.getElementById('prozessBar');
@@ -1250,6 +1310,7 @@
     syncProzess();
   }
 
+  /* ── Contact form submit ── */
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -1259,6 +1320,7 @@
       btn.style.background = 'linear-gradient(135deg, #2D9E6B 0%, #1E7A52 100%)';
       btn.style.color = '#fff';
       btn.disabled = true;
+      // → Hier Backend-Integration einfügen (Netlify Forms / Formspree / eigene API)
     });
   }
 
